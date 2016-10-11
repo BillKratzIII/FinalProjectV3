@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.final_project.entity.Restaurant;
 
 @Repository
-public class RestaurantDAOImpl implements RestaurantDAO {
+public class RestaurantDAOImpl implements IRestaurantDAO {
 
 	@Autowired
 	private HibernateTemplate  hibernateTemplate;
