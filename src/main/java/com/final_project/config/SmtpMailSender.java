@@ -4,23 +4,25 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
+
 
 @Component
 public class SmtpMailSender {
 	
 	@Autowired
-	private static JavaMailSender javaMailSender;
+	private JavaMailSender javaMailSender;
 	
-	
-	public static void send(String to, String subject, String body) throws MessagingException{
+	public void send(String to, String subject, String body) throws MessagingException{
 		
 		MimeMessage message = javaMailSender.createMimeMessage();
 		MimeMessageHelper helper;
 		
-		helper = new MimeMessageHelper(message, true); // true indicates multipart message
+		helper = new MimeMessageHelper(message, true);
 		helper.setSubject(subject);
 		helper.setTo(to);
 		helper.setText(body, true);
@@ -28,5 +30,8 @@ public class SmtpMailSender {
 		javaMailSender.send(message);
 		
 	}
+	
+	
+	
 
 }//class
