@@ -3,7 +3,6 @@ package com.final_project.controller;
 import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.MailException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +18,7 @@ public class MailController {
 	@RequestMapping("/send-mail")
 	public void sendMail() throws MessagingException{
 		
-		smtpMailSender.send("bkrone1@gmail.com", "Test email", "YOUR MY BEST FRIEND!!!");
+		smtpMailSender.send("wkratz3@gmail.com", "Test email", "Take it easy");
 		
 	}
 
