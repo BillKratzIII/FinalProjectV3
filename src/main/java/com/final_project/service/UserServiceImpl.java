@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.final_project.dao.UserDAO;
+import com.final_project.dao.IUserDAO;
 import com.final_project.entity.User;
 
 @Service
@@ -14,7 +14,7 @@ import com.final_project.entity.User;
 public class UserServiceImpl implements UserService{
 	
 	@Autowired
-	private UserDAO userDAO;
+	private IUserDAO userDAO;
 	
 	@Override
 	public User getUserById(int userId) {
