@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convo Cafe</title>
+</head>
+<body>
+<h1>Test Home Page</h1>
+
+<h3>New User Sign Up</h3>
+  <form id="signUpForm" method="post">
+    	<p>Name: <input type="text" id="name"/></p>
+    	<select id="ageRangeId">
+  			<option value="1">18-22</option>
+  			<option value="2">23-30</option>
+  			<option value="3">31-40</option>
+  			<option value="4">41-50</option>
+  			<option value="5">51-65</option>
+  			<option value="6">65+</option>
+		</select>
+        <select id="gender">
+        	<option value="Female">Female</option>
+        	<option value="Male">Male</option>
+        </select>
+        <p>Street Address: <input type="text" id="streetAddress"/></p>
+        <p>City: <input type="text" id="city"/></p>
+        <p>State: <input type="text" id="state"/></p>
+        <p>Zip: <input type="text" id="zip"/></p>
+        <p>About Me: <input type="text" id="aboutMe"/></p>
+        <p>Email: <input type="text" id="email"/></p>
+        <p>Password: <input type="password" id="password"/></p>
+        <select id="firstLanguageId">
+        	<option value="1">English</option>
+        	<option value="2">Spanish</option>
+        	<option value="3">French</option>
+        	<option value="4">Italian</option>
+        	<option value="5">German</option>
+        	<option value="6">Japanese</option>
+        </select>
+        <select id="learningLanguageId">
+        	<option value="1">English</option>
+        	<option value="2">Spanish</option>
+        	<option value="3">French</option>
+        	<option value="4">Italian</option>
+        	<option value="5">German</option>
+        	<option value="6">Japanese</option>
+        </select>
+        <select id="skillLevelId">
+        	<option value="1">Beginner</option>
+        	<option value="2">Intermediate</option>
+        	<option value="3">Advanced</option>
+        </select>
+        
+    </form>
+<button id="submitButton">Submit</button>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+$(document).ready(function(){
+	console.log("testing");
+	
+	$("#submitButton").click(function(){
+		console.log("inside button");
+		$.ajax({
+			  url: "/user",
+			  type:"POST",
+			  data:JSON.stringify(
+			  	{
+				    "name": $("#name").val(),
+				    "ageRangeId": $("#ageRangeId").val(),
+				    "gender": $("#gender").val(),
+				    "streetAddress": $("#streetAddress").val(),
+				    "city": $("#city").val(),
+				    "state": $("#state").val(),
+				    "zip" : $("#zip").val(),
+				    "aboutMe" : $("#aboutMe").val(),
+				    "email" : $("#email").val(),
+				    "password" : $("#password").val(),
+				    "firstLanguageId" : $("#firstLanguageId").val(),
+				    "learningLanguageId" : $("#learningLanguageId").val(),
+				    "skillLevelId" : $("#skillLevelId").val()
+			  	}),
+			  contentType:"application/json; charset=utf-8",
+			  dataType:"json",
+			  success: function() {
+			  		alert("Added to Db");
+			  }
+		});
+	});
+});
+
+</script>
+</body>
+</html>

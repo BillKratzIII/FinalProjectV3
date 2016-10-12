@@ -9,7 +9,7 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 
 @Configuration
 public class MvcConfig extends WebMvcConfigurerAdapter{
-	
+	/*
 	@Bean
 	public SpringTemplateEngine getTemplateEngine(){
 		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
@@ -33,5 +33,5 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
 		templateResolver.setCacheable(false);
 		return templateResolver;
 	}
-
+	*/
 }//class
