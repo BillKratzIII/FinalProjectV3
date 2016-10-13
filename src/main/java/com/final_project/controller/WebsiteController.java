@@ -61,6 +61,12 @@ public class WebsiteController {
         return new InternalResourceView("html/MatchList.html");
     }
 	
+	@RequestMapping(value = "/sendmessage")
+    public View sendMessage()
+    {
+        return new InternalResourceView("html/sendmessage.html");
+    }
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<Void> userLogin(@RequestBody User user, HttpSession sessionObj) {
         
