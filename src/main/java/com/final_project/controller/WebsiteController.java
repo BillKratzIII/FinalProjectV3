@@ -55,6 +55,12 @@ public class WebsiteController {
         return new InternalResourceView("html/participatingrestaurants.html");
     }
 	
+	@RequestMapping(value = "/matchlist")
+    public View matchList()
+    {
+        return new InternalResourceView("html/MatchList.html");
+    }
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<Void> userLogin(@RequestBody User user, HttpSession sessionObj) {
         
