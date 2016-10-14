@@ -12,22 +12,21 @@ import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.InternalResourceView;
 
 import com.final_project.entity.User;
-//import org.springframework.web.servlet.ModelAndView;
-//import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.servlet.ModelAndView;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
-@RequestMapping("/")
 public class WebsiteController {
 	
-	/*
+	
 	@RequestMapping("/")
 	public ModelAndView index(HttpServletRequest request, ModelAndView mv){
 		
 		mv.setViewName("index");
 		return mv;
 	}
-	*/
 	
+	/*
 	@RequestMapping("")
 	@ResponseBody
 	public View home(HttpSession sessionObj){
@@ -35,7 +34,7 @@ public class WebsiteController {
 		sessionObj.setAttribute("message" , "Session started.");
 		System.out.println(sessionObj.getAttribute("message") + " : " + sessionObj.getId());
 		return new InternalResourceView("html/index.html");
-	}
+	}*/
 	
 	@RequestMapping(value = "/profile")
     public View profile()
