@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- SITE TITLE -->
+    <title>Convo Cafe | Profile</title>            
+        <!-- Latest Bootstrap min CSS -->
+         <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery_popup.css" />
+      
+    <!-- <link href="css/dialog.css" rel="stylesheet"> -->
+        <!-- Google Font -->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/ui-darkness/jquery-ui.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>      
+   
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div class="divBackgroundImage" style="background-image: url(img/worldmap.jpg);">
+                    </div>
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <a class="navbar-brand" href="index.html"><img src="img/logo1.png" width = 75px heigth = 75px class="img-circle"/></a>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">My Profile</a></li>
+        <li><a href="ParticipatingRestaurants.html">Participating Restaurants</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Options<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a id="popupUU">Update Profile</a></li>
+            <li><a id="popupDU">Delete Profile</a></li>
+            <li><a id="popupAL">Ability Level Descriptions</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+      
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    <!-- Navigation -->
+       
+<div class="container">
+    
+    <section class="main-section">
+            <div class="container" id="italy">
+                <div class="tab-container">
+                    <div id="item-one" style="display: block">
+                        <div class="row about">
+                            <div class="col-md-4 col-sm-12">
+                                <div class="about_me text-center">
+                                <h3><span th:text="${session.message}">test</span></h3>
+                                <img src="img/girl1_360.png" class="img-responsive" alt="" />
+                                
+                                </div>
+                                
+                            </div><!-- END COL-->
+                            <div class="col-md-8 col-sm-6">
+
+                                <h3><strong>About Me: </strong></h3>
+                                    <p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</strong></p>
+                            </div><!-- END COL-->
+                       
+                           <!--  <div class="col-md-8 col-sm-6"> -->
+                              <div class="col-md-3 col-sm-6" style="text-align: center">
+                                <h4 class="about_title"><underline><strong>Languages</strong></underline></h4>
+                                <div class="progress-bar-linear">
+                                    <p class="progress-bar-text"><strong>Italian</strong></p>
+                                    <p class="progress-bar-text"><strong>French</strong></p>
+                                <div class="progress-bar">
+                                      <span data-percent="100"></span>
+                                </div>
+                                
+                                </div><!-- end class-->
+                                </div><!-- END COL-->
+                            <div class="col-md-3 col-sm-6" style="text-align: center">
+                                <h4 class="about_title"><underline><strong>Location</strong></underline></h4>
+                                <div class="progress-bar-linear">
+                                    <p class="progress-bar-text"><strong>Baltimore, MD</strong></p>
+                                    <div class="progress-bar">
+                                        <span data-percent="100"></span>
+                                    </div>
+                                </div>
+                            </div><!-- END COL-->
+                            <div class="col-md-2 col-sm-6" style="text-align: center">
+                                <button class="btn btn-info btn-lg" role="alert"><a href = "MatchList.html">
+                                  Find a <br/>New Language<br/> Partner!!
+                                </a></button>
+                            </div>
+                          <!-- </div> --><!--end div class lang, loc, button-->
+                      </div><!--end class row about-->
+                    </div><!--div item one-->
+                  </div><!--tab container-->
+
+    <br/>
+    <br/>
+
+<!-- <div class="well well-lg">
+  <h1>Messages</h1>
+    <div class="well well-sm">
+      <div class="panel panel-info" role="alert"><a href = "profile.html">
+        <img src="img/girl1small_360.png" class="img-responsive" alt="" /></a>
+          <div class="panel-heading">Message 1</div>
+          <div class="panel-body">Hola guy! Let's meet up and talk some Spanish
+    </div>
+      </div>
+    </div>
+  <div class="well well-sm">
+    <div class="panel panel-info" role="alert"><a href = "profile.html">
+      <img src="img/guy1small_360.png" class="img-responsive" alt="" /></a>
+        <div class="panel-heading">Message 2</div>
+          <div class="panel-body">Hola guy! Let's meet up and talk some Spanish
+          </div>
+    </div>
+  </div>
+  <div class="well well-sm">
+    <div class="panel panel-info" role="alert"><a href = "profile.html">
+      <img src="img/girl1small_360.png" class="img-responsive" alt="" /></a>
+        <div class="panel-heading">Message 3</div>
+          <div class="panel-body">Hola guy! Let's meet up and talk some Spanish
+          </div>
+    </div>
+  </div>
+</div> -->
+
+<br/>
+
+      </div><!--italy container-->
+    </section>
+</div> <!-- /.container -->
+<br/>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; CC 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<div id="dialog3" title="Delete User">
+  <form>
+    <h2>Delete User</h2>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-default">Delete Profile</button>
+  <br/>
+  <br/>
+  </form>
+</div>
+                       
+  
+
+<div id="dialog4" title="Update User">
+  <form>
+    <h2>Update User</h2>
+      <form action="/update" method="POST" class="form-horizontal" id="updateUser">
+        <div class="form-group">
+          <label for="userName" class="col-sm-2 control-label">User Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required>
+            </div>
+        </div>
+            <div class="form-group">
+             <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+               <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Confirm Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">City</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">State</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Age Range
+              <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Under 18</a></li>
+                <li><a href="#">18-30</a></li>
+                <li><a href="#">31-45</a></li>
+                <li><a href="#">45-60</a></li>
+                <li><a href="#">60+</a></li>
+              </ul>
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Ability Level
+              <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Beginner</a></li>
+                <li><a href="#">Intermediate</a></li>
+                <li><a href="#">Advanced</a></li>
+                <li><a href="#">Teacher</a></li>
+              </ul>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputFile">Upload Profile Image</label>
+              <input type="file" id="exampleInputFile">
+            </div>
+            <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Choose Your Learning Language
+            <span class="caret"></span>
+            </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Spanish</a></li>
+                <li><a href="#">French</a></li>
+                <li><a href="#">Italian</a></li>
+                <li><a href="#">Portuguese</a></li>
+                <li><a href="#">German</a></li>
+                <li><a href="#">Japanese</a></li>
+              </ul>
+            </div>
+            <button type="submit" class="btn btn-default">Update</button>
+  </form>
+</div>
+
+
+<div id="dialog5" title="Ability Levels">
+  <button class="btn btn-info btn-lg btn-block" role="alert"><a href = "profile.html">
+    <p>Beginner</p>
+      <br/>
+        <p>You are new to the language. You can say "hello" and ask where the library is, but that is about it. <br/> Learners will spend a lot of their time working through challenges with the languages together. <p></a>
+  </button>
+      <br/>
+  <button class="btn btn-warning btn-lg btn-block" role="alert"><a href = "profile.html">
+        <p>Intermediate</p>
+      <br/>
+        <p>You are comfortable (or getting comfortable) with the language, but you are far from fluent.<br/> You will be able to have a conversation with few difficulties.</p></a>
+  </button>
+      <br/>
+  <button class="btn btn-success btn-lg btn-block" role="alert"><a href = "profile.html">
+        <p>Advanced</p>
+      <br/>
+        <p>You are fluent in the language you are learning. The vast majority <br/>of the meeting will take place in the second language.</p></a>
+  </button>
+      <br/>
+  <button class="btn btn-primary btn-lg btn-block" role="alert"><a href = "profile.html">
+      <p>Teaching Track</p>
+      <br/>
+      <p>You are willing to volunteer your services and work with learners in order to help<br/> learn a new language. You are open to working with people in any of the other 3 tracks.</p></a>
+  </button>
+</div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src= "https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript"></script>
+    
+    <script src="js/form.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery_popup.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    </script>
+
+</body>
+
+</html>
