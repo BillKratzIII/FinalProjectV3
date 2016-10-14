@@ -61,6 +61,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Options<span class="caret"></span></a>
           <ul class="dropdown-menu">
+          	<li><a href="logout.html">Logout</a>
             <li><a id="popupUU">Update Profile</a></li>
             <li><a id="popupDU">Delete Profile</a></li>
             <li><a id="popupAL">Ability Level Descriptions</a></li>
@@ -83,7 +84,7 @@
                         <div class="row about">
                             <div class="col-md-4 col-sm-12">
                                 <div class="about_me text-center">
-                                <h3><span th:text="${session.userName}"></span></h3>
+                                <h3><span th:text="${session.user.name}"></span></h3>
                                 <img src="img/girl1_360.png" class="img-responsive" alt="" />
                                 
                                 </div>
@@ -92,15 +93,15 @@
                             <div class="col-md-8 col-sm-6">
 
                                 <h3><strong>About Me: </strong></h3>
-                                    <p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</strong></p>
+                                    <p><strong><span th:text="${session.user.aboutMe}"></strong></p>
                             </div><!-- END COL-->
                        
                            <!--  <div class="col-md-8 col-sm-6"> -->
                               <div class="col-md-3 col-sm-6" style="text-align: center">
                                 <h4 class="about_title"><underline><strong>Languages</strong></underline></h4>
                                 <div class="progress-bar-linear">
-                                    <p class="progress-bar-text"><strong>Italian</strong></p>
-                                    <p class="progress-bar-text"><strong>French</strong></p>
+                                    <p class="progress-bar-text"><strong><span th:text="${session.user.firstLanguageId}"></strong></p>
+                                    <p class="progress-bar-text"><strong><span th:text="${session.user.learningLanguageId}"></strong></p>
                                 <div class="progress-bar">
                                       <span data-percent="100"></span>
                                 </div>
@@ -110,14 +111,15 @@
                             <div class="col-md-3 col-sm-6" style="text-align: center">
                                 <h4 class="about_title"><underline><strong>Location</strong></underline></h4>
                                 <div class="progress-bar-linear">
-                                    <p class="progress-bar-text"><strong>Baltimore, MD</strong></p>
+                                    <p class="progress-bar-text"><strong><span th:text="${session.user.city}"></strong></p>
+                                    <p class="progress-bar-text"><strong><span th:text="${session.user.state}"></strong></p>
                                     <div class="progress-bar">
                                         <span data-percent="100"></span>
                                     </div>
                                 </div>
                             </div><!-- END COL-->
                             <div class="col-md-2 col-sm-6" style="text-align: center">
-                                <button class="btn btn-info btn-lg" role="alert"><a href = "MatchList.html">
+                                <button class="btn btn-info btn-lg" role="alert"><a href = "matchlist.html">
                                   Find a <br/>New Language<br/> Partner!!
                                 </a></button>
                             </div>

@@ -26,15 +26,6 @@ public class WebsiteController {
             return mv;
     } 
 	
-	/*
-	@RequestMapping("")
-	@ResponseBody
-	public View home(HttpSession sessionObj){
-		System.out.println("Inside home view");
-		sessionObj.setAttribute("message" , "Session started.");
-		System.out.println(sessionObj.getAttribute("message") + " : " + sessionObj.getId());
-		return new InternalResourceView("html/index.html");
-	}*/
 	
 	@RequestMapping("/profile")
     public ModelAndView profile(HttpSession sessionObj, ModelAndView mv)
@@ -42,37 +33,37 @@ public class WebsiteController {
         return mv;
     }
 	
-	@RequestMapping(value = "/participatingrestaurants")
-    public View participatingRestaurants()
+	@RequestMapping("/participatingrestaurants")
+    public ModelAndView participatingrestaurants(HttpSession sessionObj, ModelAndView mv)
     {
-        return new InternalResourceView("html/participatingrestaurants.html");
+        return mv;
     }
 	
-	@RequestMapping(value = "/matchlist")
-    public View matchList()
+	@RequestMapping("/matchlist")
+    public ModelAndView matchlist(HttpSession sessionObj, ModelAndView mv)
     {
-        return new InternalResourceView("html/matchlist.html");
-    }
-	
-	@RequestMapping(value = "/sendmessage")
-    public View sendMessage()
-    {
-        return new InternalResourceView("html/sendmessage.html");
+        return mv;
     }
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<Void> userLogin(@RequestBody User user, HttpSession sessionObj) {
         
-        sessionObj.setAttribute("userName", user.getName());
-        System.out.println(sessionObj.getAttribute("userName"));
+        sessionObj.setAttribute("user", user);
         return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/logout")
-	public View logout(HttpSession sessionObj){
+	@RequestMapping("/logout")
+	public ModelAndView logout(HttpSession sessionObj, ModelAndView mv){
 		sessionObj.invalidate();
 		System.out.println("session cleared");
-		return new InternalResourceView("html/index.html");
+		mv.setViewName("index");
+		return mv;
 	}
+	
+	/*@RequestMapping("/error")
+	public ModelAndView error(ModelAndView mv){
+		mv.setViewName("index");
+		return mv;
+	}*/
 	
 }
