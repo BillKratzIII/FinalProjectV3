@@ -20,21 +20,13 @@ import org.springframework.web.servlet.view.InternalResourceView;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.final_project.entity.User;
-//import org.springframework.web.servlet.ModelAndView;
-//import javax.servlet.http.HttpServletRequest;
+
 
 @Controller
 @RequestMapping("/")
 public class WebsiteController {
 	
-	/*
-	@RequestMapping("/")
-	public ModelAndView index(HttpServletRequest request, ModelAndView mv){
-		
-		mv.setViewName("index");
-		return mv;
-	}
-	*/
+	
 	
 	@RequestMapping("")
 	@ResponseBody

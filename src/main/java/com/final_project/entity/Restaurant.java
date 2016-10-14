@@ -47,7 +47,6 @@ public class Restaurant implements Serializable{
 	@Column(name="password")
 	private String password;
 	
-	//private String language;
 	
 	/*getters and setters below- */
 
