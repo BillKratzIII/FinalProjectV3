@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.final_project.entity.User;
 
 @Repository
-public class UserDAOImpl implements UserDAO{
+public class UserDAOImpl implements IUserDAO{
 	
 	@Autowired
 	private HibernateTemplate  hibernateTemplate;

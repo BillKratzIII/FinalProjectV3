@@ -1,6 +1,8 @@
-package com.final_project.controller;
+ package com.final_project.controller;
 
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -35,13 +37,14 @@ public class UserController {
 	}
 	
 	@RequestMapping(value= "/user", method = RequestMethod.POST)
-	public ResponseEntity<Void> userPerson(@RequestBody User user, UriComponentsBuilder builder) {
+	public ResponseEntity<Void> userPerson(@RequestBody User user, UriComponentsBuilder builder, HttpSession sessionObj) {
         boolean flag = userService.addUser(user);
         if (flag == false) {
         	return new ResponseEntity<Void>(HttpStatus.CONFLICT);
         }
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(builder.path("/user/{id}").buildAndExpand(user.getUserId()).toUri());
+        sessionObj.setAttribute("user", user);
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	}
 	

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.final_project.dao.RestaurantDAO;
+import com.final_project.dao.IRestaurantDAO;
 import com.final_project.entity.Restaurant;
 
 @Service
@@ -14,7 +14,7 @@ import com.final_project.entity.Restaurant;
 public class RestaurantServiceImpl implements RestaurantService {
 
 	@Autowired
-	private RestaurantDAO RestaurantDAO;
+	private IRestaurantDAO RestaurantDAO;
 
 	@Override
 	public Restaurant getRestaurantById(int restaurantId) {

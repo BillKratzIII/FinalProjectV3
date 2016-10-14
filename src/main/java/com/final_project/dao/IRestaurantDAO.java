@@ -3,7 +3,7 @@ package com.final_project.dao;
 import java.util.List;
 import com.final_project.entity.Restaurant;
 
-public interface RestaurantDAO {
+public interface IRestaurantDAO {
 	List<Restaurant> getAllRestaurants();
 	Restaurant getRestaurantById(int restaurantId);
 	boolean addRestaurant(Restaurant restaurant);
