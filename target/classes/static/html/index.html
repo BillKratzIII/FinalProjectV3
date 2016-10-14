@@ -33,13 +33,6 @@
 	href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
 	rel="stylesheet" type="text/css">
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body>
@@ -48,16 +41,16 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
-			<a class="navbar-brand" href="index.html"><img
+			<a class="navbar-brand" href="/"><img
 				src="img/logo1.png" width=75px height=75px class="img-circle" /></a>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 
-					<li><a href="index.html">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li><a href="profile.html">My Profile</a></li>
-					<li><a href="ParticipatingRestaurants.html">Participating
+					<li><a href="participatingrestaurants.html">Participating
 							Restaurants</a></li>
 
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -353,7 +346,7 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 	<script>
-
+$(document).ready(function(){
 	
 	$("#submitButton").click(function(){
 		console.log("inside submit button");
@@ -442,7 +435,7 @@
 			  	dataType:"json",
 			  	complete: function() {
 			  		console.log("Logged In!");
-			  		//location.href = "/profile.html";
+			  		location.href = "/profile.html";
 			  	},
 			  	error: function(){
 			  		console.log("error");
