@@ -10,21 +10,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.InternalResourceView;
-
 import com.final_project.entity.User;
 import org.springframework.web.servlet.ModelAndView;
-import javax.servlet.http.HttpServletRequest;
 
 @Controller
+@RequestMapping("/")
 public class WebsiteController {
 	
 	
-	@RequestMapping("/")
-	public ModelAndView index(HttpServletRequest request, ModelAndView mv){
-		
-		mv.setViewName("index");
-		return mv;
-	}
+	@RequestMapping("")
+    @ResponseBody
+    public ModelAndView home(HttpSession sessionObj, ModelAndView mv){
+            sessionObj.setAttribute("message" , "This is something in the session");
+            mv.setViewName("index");
+            return mv;
+    } 
 	
 	/*
 	@RequestMapping("")
@@ -36,10 +36,10 @@ public class WebsiteController {
 		return new InternalResourceView("html/index.html");
 	}*/
 	
-	@RequestMapping(value = "/profile")
-    public View profile()
-    {
-        return new InternalResourceView("html/profile.html");
+	@RequestMapping("/profile")
+    public ModelAndView profile(HttpSession sessionObj, ModelAndView mv)
+    {       
+        return mv;
     }
 	
 	@RequestMapping(value = "/participatingrestaurants")
