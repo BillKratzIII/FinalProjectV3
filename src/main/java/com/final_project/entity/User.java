@@ -29,8 +29,6 @@ private static final long serialVersionUID = 1L;
 	@Column (name="age_range_id")
 	private int ageRangeId;
 
-	//private int ageRange;
-	
 	@Column (name="gender")
 	private String gender;
 	
@@ -58,18 +56,12 @@ private static final long serialVersionUID = 1L;
 	@Column (name="first_language_id")
 	private String firstLanguageId;
 	
-	//private String firstLanguage;
-	
 	@Column (name="learning_language_id")
 	private String learningLanguageId;
-	
-	//private String learningLanguage;
 	
 	@Column (name="skill_level_id")
 	private String skillLevelId;
 	
-	//private String skillLevel;
-
 	/*getters and setters below- */
 	public int getUserId() {
 		return userId;

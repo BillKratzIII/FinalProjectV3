@@ -11,7 +11,7 @@ public class UserDAOImpl implements IUserDAO{
 	
 	@Autowired
 	private HibernateTemplate  hibernateTemplate;
-
+	
 	@Override
 	public User getUserById(int userId) {
 		return hibernateTemplate.get(User.class, userId);

@@ -8,15 +8,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.View;
-import org.springframework.web.servlet.view.InternalResourceView;
 import com.final_project.entity.User;
 import org.springframework.web.servlet.ModelAndView;
+
 
 @Controller
 @RequestMapping("/")
 public class WebsiteController {
-	
 	
 	@RequestMapping("")
     @ResponseBody
@@ -59,11 +57,5 @@ public class WebsiteController {
 		mv.setViewName("index");
 		return mv;
 	}
-	
-	/*@RequestMapping("/error")
-	public ModelAndView error(ModelAndView mv){
-		mv.setViewName("index");
-		return mv;
-	}*/
 	
 }
