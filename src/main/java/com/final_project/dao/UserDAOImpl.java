@@ -1,6 +1,11 @@
 package com.final_project.dao;
 
 import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
@@ -11,7 +16,14 @@ public class UserDAOImpl implements IUserDAO{
 	
 	@Autowired
 	private HibernateTemplate  hibernateTemplate;
-
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	public void setSessionFactory(SessionFactory sessionFactory){
+		this.sessionFactory = sessionFactory;
+	}
+	
 	@Override
 	public User getUserById(int userId) {
 		return hibernateTemplate.get(User.class, userId);
