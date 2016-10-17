@@ -9,5 +9,6 @@ public interface UserService {
 	boolean addUser(User user);
 	void updateUser(User user);
 	void deleteUser(int user_id);
+	
 }
 

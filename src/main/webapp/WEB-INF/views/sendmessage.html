@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Convo Cafe | Send Message</title>
 </head>
 <body>
 	<form>
@@ -33,6 +33,7 @@
 					dataType:"json",
 					complete: function(){
 						console.log("Email Sent?");
+						location.href = "/profile.html";
 					},
 					error: function(){
 						console.log("error");

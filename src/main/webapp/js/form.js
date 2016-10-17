@@ -1,7 +1,8 @@
 $( function() {
   $("#dialog1").hide();
   $("#popupLI").click(function() {
-      $("#dialog1").dialog()
+	  console.log("inside popupLI button");
+      $("#dialog1").dialog();
       }); 
     });
 
