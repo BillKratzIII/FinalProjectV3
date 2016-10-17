@@ -45,13 +45,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         
-        <li><a href="/">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="profile.html">My Profile</a></li>
-        <li><a href="participatingrestaurants.html">Participating Restaurants</a></li>
+        <li><a href="ParticipatingRestaurants.html">Participating Restaurants</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Options<span class="caret"></span></a>
           <ul class="dropdown-menu">
-          	<li><a href="logout.html">Logout</a>
             <li><a id="popupUU">Update Profile</a></li>
             <li><a id="popupDU">Delete Profile</a></li>
             <li><a id="popupAL">Ability Level Descriptions</a></li>
@@ -74,11 +73,7 @@
                         <div class="row about">
                             <div class="col-md-4 col-sm-12">
                                 <div class="about_me text-center">
-<<<<<<< HEAD:src/main/resources/static/html/profile.html
                                 <h3>Guys Name</h3>
-=======
-                                <h3><span th:text="${session.user.name}"></span></h3>
->>>>>>> fccc52af465b197a9c98c805aad639fb645572f5:src/main/webapp/WEB-INF/views/profile.html
                                 <img src="img/girl1_360.png" class="img-responsive" alt="" />
                                 
                                 </div>
@@ -87,15 +82,15 @@
                             <div class="col-md-8 col-sm-6">
 
                                 <h3><strong>About Me: </strong></h3>
-                                    <p><strong><span th:text="${session.user.aboutMe}"></strong></p>
+                                    <p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</strong></p>
                             </div><!-- END COL-->
                        
                            <!--  <div class="col-md-8 col-sm-6"> -->
                               <div class="col-md-3 col-sm-6" style="text-align: center">
                                 <h4 class="about_title"><underline><strong>Languages</strong></underline></h4>
                                 <div class="progress-bar-linear">
-                                    <p class="progress-bar-text"><strong><span th:text="${session.user.firstLanguageId}"></strong></p>
-                                    <p class="progress-bar-text"><strong><span th:text="${session.user.learningLanguageId}"></strong></p>
+                                    <p class="progress-bar-text"><strong>Italian</strong></p>
+                                    <p class="progress-bar-text"><strong>French</strong></p>
                                 <div class="progress-bar">
                                       <span data-percent="100"></span>
                                 </div>
@@ -105,15 +100,14 @@
                             <div class="col-md-3 col-sm-6" style="text-align: center">
                                 <h4 class="about_title"><underline><strong>Location</strong></underline></h4>
                                 <div class="progress-bar-linear">
-                                    <p class="progress-bar-text"><strong><span th:text="${session.user.city}"></strong></p>
-                                    <p class="progress-bar-text"><strong><span th:text="${session.user.state}"></strong></p>
+                                    <p class="progress-bar-text"><strong>Baltimore, MD</strong></p>
                                     <div class="progress-bar">
                                         <span data-percent="100"></span>
                                     </div>
                                 </div>
                             </div><!-- END COL-->
                             <div class="col-md-2 col-sm-6" style="text-align: center">
-                                <button class="btn btn-info btn-lg" role="alert"><a href = "matchlist.html">
+                                <button class="btn btn-info btn-lg" role="alert"><a href = "MatchList.html">
                                   Find a <br/>New Language<br/> Partner!!
                                 </a></button>
                             </div>
@@ -227,11 +221,11 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">City</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="City">
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">State</label>
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="State">
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="dropdown">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -317,15 +311,9 @@
     <script src="js/jquery_popup.js"></script>
     <!-- Bootstrap Core JavaScript -->
 
-<<<<<<< HEAD:src/main/resources/static/html/profile.html
     
     
     
-=======
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
->>>>>>> fccc52af465b197a9c98c805aad639fb645572f5:src/main/webapp/WEB-INF/views/profile.html
 
 
 </body>
