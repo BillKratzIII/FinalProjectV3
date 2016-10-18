@@ -62,6 +62,9 @@ private static final long serialVersionUID = 1L;
 	@Column (name="skill_level_id")
 	private String skillLevelId;
 	
+	@Column (name="avitar")
+	private String avitar;
+	
 	/*getters and setters below- */
 	public int getUserId() {
 		return userId;
@@ -173,6 +176,14 @@ private static final long serialVersionUID = 1L;
 
 	public void setSkillLevelId(String skillLevelId) {
 		this.skillLevelId = skillLevelId;
+	}
+	
+	public String getAvitar() {
+		return avitar;
+	}
+
+	public void setAvitar(String avitar) {
+		this.avitar = avitar;
 	}
 	
 	
