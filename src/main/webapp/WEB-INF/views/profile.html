@@ -245,7 +245,33 @@
     <script src="js/form.js"></script>
     <script src="js/bootstrap.min.js"></script>
     
-    <!-- Bootstrap Core JavaScript -->
+    <script>
+    $(document).ready(function(){
+    	console.log("testing js");
+    	$("#sendEmailButton").click(function(){
+    		console.log("inside submit button");
+    		$.ajax({
+    			url: "/send-mail",
+    			type:"POST",
+    			data:JSON.stringify({
+    				"address" : $("#address").val(),
+    				"subject" : $("#subject").val(),
+    				"message" : $("#message").val()
+    			}),
+    			contentType:"application/json; charset=utf-8",
+    			dataType:"json",
+    			complete: function(){
+    				console.log("Email Sent?");
+    				location.href = "/profile.html";
+    			},
+    			error: function(){
+    				console.log("error");
+    			}
+    		});
+    	});
+    });
+    
+    </script>
 
     
     

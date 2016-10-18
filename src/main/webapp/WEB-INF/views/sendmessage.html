@@ -19,7 +19,7 @@
 	<script>
 		$(document).ready(function(){
 			console.log("testing js");
-			$("#submitButton").click(function(){
+			$("#sendEmailButton").click(function(){
 				console.log("inside submit button");
 				$.ajax({
 					url: "/send-mail",
@@ -40,7 +40,7 @@
 					}
 				});
 			});
-		});
+		}); 
 	</script>
 </body>
 </html>

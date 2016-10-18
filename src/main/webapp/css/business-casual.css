@@ -214,44 +214,19 @@ footer p {
     background: linear-gradient(to right, lightgreen, white, pink); /* Standard syntax (must be last) */
 }
 
-#brazil {
-    height: 200px;
-    background: linear-gradient(to right, lightgreen, #ffff94, lightgreen); /* Standard syntax (must be last) */
-}
+
 
 #france {
-    height: 200px;
+    height: 100%;
     background: linear-gradient(to right, lightblue, white, pink); /* Standard syntax (must be last) */
 }
 
 #spain {
-    height: 200px;
+    height: 100%;
     background: linear-gradient(to right, pink, #ffff94, pink); /* Standard syntax (must be last) */
 }
 
-#brazil2 { 
-  background: url('https://thumbs.dreamstime.com/z/flag-brazil-5691525.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
- 
-}
 
-#italy2 { 
-  background: url('http://previews.123rf.com/images/miluxian/miluxian1207/miluxian120700310/14515057-London-UK-13-June-2012-Rome-Italy-marked-with-red-pushpin-on-Europe-map--Stock-Photo.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-#spain2 { 
-  background: url('https://s-media-cache-ak0.pinimg.com/564x/32/44/24/3244240300494d25fb7420417b8b94f7.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 #msform {
     width: 400px;
     margin: 50px auto;
@@ -389,8 +364,8 @@ footer p {
 
 #messagePic {
         
-    height: 250px;
-    width: 250px;
+    height: 165px;
+    width: 165px;
 
     display: flex;
     align-items: center;

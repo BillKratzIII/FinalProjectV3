@@ -37,6 +37,13 @@ public class WebsiteController {
         return mv;
     }
 	
+	@RequestMapping("/createrestaurant")
+    public ModelAndView createrestaurant(HttpSession sessionObj, ModelAndView mv)
+    {       
+        return mv;
+    }
+	
+		
 	@RequestMapping("/participatingrestaurants")
     public ModelAndView participatingrestaurants(HttpSession sessionObj, ModelAndView mv)
     {

@@ -7,6 +7,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,7 +36,7 @@ public class RestaurantController {
 	}
 
 	@RequestMapping(value= "/restaurant", method = RequestMethod.POST)
-	public ResponseEntity<Void> restaurantMeetup(@RequestBody Restaurant restaurant, UriComponentsBuilder builder) {
+	public ResponseEntity<Void> restaurantMeetup(@ModelAttribute Restaurant restaurant, UriComponentsBuilder builder) {
         boolean flag = restaurantService.addRestaurant(restaurant);
         if (flag == false) {
         	return new ResponseEntity<Void>(HttpStatus.CONFLICT);
