@@ -145,55 +145,52 @@
 
     
 <div id="dialog6" title="Restaurant Sign-Up">
- <form >
+ <form id="creatRestaurantForm" name="createRestaurantForm" action="post">
    <div class="form-group">
     <label for="restaurant_name">Restaurant Name</label>
-    <input type="text" class="form-control" id="restaurant_name" placeholder="Restaurant Name">
+    <input type="text" class="form-control" id="restaurant_name"  name= "name" placeholder="Restaurant Name">
+  </div>
+   <div class="form-group">
+    <label for="restaurant_street_address">Street Address</label>
+    <input type="text" class="form-control" id="restaurant_street_address"  name= "streetAddress" placeholder="Street Address">
+  </div>
+  <div class="form-group">
+    <label for="restaurant_city">City</label>
+    <input type="text" class="form-control" id="restaurant_city" name="city" placeholder="City">
+  </div>
+  <div class="form-group">
+    <label for="restaurant_state">State</label>
+    <input type="text" class="form-control" id="restaurant_state" name="state" placeholder="State">
+  </div> 
+  <div class="form-group">
+    <label for="restaurant_state">Zip Code</label>
+    <input type="text" class="form-control" id="restaurant_zip" name="zip" placeholder="Zip Code">
   </div>
   <div class="form-group">
     <label for="restaurant_email">Email address</label>
-    <input type="email" class="form-control" id="restaurant_email" placeholder="Email">
+    <input type="email" class="form-control" id="restaurant_email" name="email" placeholder="Email">
   </div>
   <div class="form-group">
     <label for="restaurant_password">Password</label>
-    <input type="password" class="form-control" id="restaurant_password" placeholder="Password">
+    <input type="password" class="form-control" id="restaurant_password" name="password" placeholder="Password">
   </div>
   <div class="form-group">
     <label for="restaurant_password">Confirm Password</label>
     <input type="password" class="form-control" id="restaurant_password" placeholder="Confirm Password">
   </div>
-  <div class="form-group">
-    <label for="restaurant_street_address">Street Address</label>
-    <input type="text" class="form-control" id="restaurant_street_address" placeholder="Street Address">
-  </div>
-  <div class="form-group">
-    <label for="restaurant_city">City</label>
-    <input type="text" class="form-control" id="restaurant_city" placeholder="City">
-  </div>
-  <div class="form-group">
-    <label for="restaurant_state">State</label>
-    <input type="text" class="form-control" id="restaurant_state" placeholder="State">
-  </div>
   
-  <div class="form-group">
-    <label for="restaurant_img">Upload Profile Image</label>
-    <input type="file" id="restaurant_img">
-  </div>
   <div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="restaurant_cuisine" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Type of Cusine
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="restaurant_cuisine">
-    <li><a href="#">Spanish</a></li>
-    <li><a href="#">French</a></li>
-    <li><a href="#">Italian</a></li>
-    <li><a href="#">Portuguese</a></li>
-    <li><a href="#">German</a></li>
-    <li><a href="#">Japanese</a></li>
-  </ul>
-</div>
-  <button type="submit" class="btn btn-default">Submit</button>
+			<label for="learningLanguageId">Type Of Cuisine</label>
+				<select class="form-control" name="languageId" id="languageId">
+					<option value="1">English</option>
+					<option value="2">Spanish</option>
+					<option value="3">French</option>
+					<option value="4">Italian</option>
+					<option value="5">German</option>
+					<option value="6">Japanese</option>
+				</select>
+  </div>
+  <button class="btn btn-default" id="restaurantSubmit">Submit</button>
 </form>
 </div>
 
@@ -218,7 +215,25 @@
     
       
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb-8rUIYnfQ7Rg15sWA0eYMtfarAa-wvQ&callback=initMap"></script>
+    <script>
+$(function(){
+    	
+    	
+    	$("#restaurantSubmit").click(function(event){
+    		event.preventDefault();
+    		console.log($("#createRestaurantForm").serialize());
+    		$.post("/restaurant", $("#createRestaurantForm").serialize(), function(data){
+    			console.log("Success")
+    			location.href = "/participatingrestaurants";
+    		}).error(function(){
+    			console.log("Failure");
+    			
+    		})
+    	});
+    	
+    });
     
+    </script>
 
 
    
