@@ -21,7 +21,7 @@
     
     <link href="css/dialog.css" rel="stylesheet"> 
   
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/flick/jquery-ui.css" rel="stylesheet">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
    
 
 </head>
@@ -120,8 +120,16 @@
                 <div class="col-lg-12 text-center">
                     <p>Copyright &copy; CC 2016</p>
                 </div>
-            </div>
-        </div>
+                <div style="text-align:center">
+                <a target="_blank" title="follow me on Twitter" href="http://www.twitter.com/ConvoCafeMD"><img alt="follow me on Twitter" src="https://c866088.ssl.cf3.rackcdn.com/assets/twitter30x30.png" border=0></a>
+                              
+                <a target="_blank" title="follow me on facebook" href="http://www.facebook.com/ConvoCafe"><img alt="follow me on facebook" src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png" border=0></a>
+                               
+                <a target="_blank" title="follow me on instagram" href="http://www.instagram.com/ConvoCafe"><img alt="follow me on instagram" src="https://c866088.ssl.cf3.rackcdn.com/assets/instagram30x30.png" border=0></a>
+                <a target="_blank" title="follow me on google plus" href="https://plus.google.com/PlaceHolder"><img alt="follow me on google plus" src="https://c866088.ssl.cf3.rackcdn.com/assets/googleplus30x30.png" border=0></a>
+                </div>
+            </div> 
+         </div>
     </footer>
 
     <div id="dialog1" title="Log In">
@@ -143,8 +151,8 @@
 
 
   
-  <form action="">
-    <fieldset id="dialog2">
+  <form action="" >
+      <fieldset id="dialog2" title="Create User">
       
         <h3 class="fs-title">Create User</h3>
           <h3 class="fs-subtitle">Step 1</h3>
@@ -169,8 +177,11 @@
       
     </fieldset> 
 
-    <fieldset id="dialog2a">
-       <div class="form-group">
+    <fieldset id="dialog2a" title="Create User - Personal Info">
+       
+       <h3 class="fs-title">Create User</h3>
+          <h3 class="fs-subtitle">Step 2</h3>
+          <div class="form-group">
         <label for="street_address">Street Address</label>
             <input type="text" class="form-control" id="street_address" placeholder="City">
         </div>
@@ -199,10 +210,8 @@
             <li><a href="#">60+</a></li>
           </ul>
         </div>
-        <div class="form-group">
-          <label for="user_image">Upload Profile Image</label>
-            <input type="file" id="exampleInputFile">
-        </div>
+        <br/>
+       
         <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="first_language_id" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         Choose Your Native Speaking Language
@@ -217,6 +226,7 @@
             <li><a href="#">Japanese</a></li>
           </ul>
         </div>
+        <br/>
         <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="learning_language_id" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         Learning Language
@@ -231,27 +241,48 @@
             <li><a href="#">Japanese</a></li>
           </ul>
         </div>
+        <br/>
         
         <input id="next2" type="button" name="next" class="next action-button" value="Next"/>
         
     </fieldset> 
 
-    <fieldset id="dialog2b">
-        <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="AbilityLevel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Ability Level
-        <span class="caret"></span>
-        </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
-            <li><a href="#">Beginner</a></li>
-            <li><a href="#">Intermediate</a></li>
-            <li><a href="#">Advanced</a></li>
-          </ul>
-        </div>
-  
-        <input id="next3" type="button" name="next" class="next action-button" value="Next"/>       
+    <fieldset id="dialog2b" title="Create User - Ability Level">
+        <h3 class="fs-title">Create User</h3>
+          <h3 class="fs-subtitle">Choose Your Ability Level</h3>
+        
+          <button class="btn btn-default btn-lg btn-block" role="alert">
+          
+            <p>Beginner</p>
+            <br/>
+            <p>You are new to the language. You can say "hello" and ask where the library is, but that is about it. <br/> Learners will spend a lot of their time working through challenges with the languages together. </p>
+          </button>
+          </input>
+            <br/>
+        
+          <button class="btn btn-default btn-lg btn-block" role="alert">
+            <p>Intermediate</p>
+            <br/>
+            <p>You are comfortable (or getting comfortable) with the language, but you are far from fluent.<br/> You will be able to have a conversation with few difficulties.</p>
+          </button>
+        
+            <br/>
+        
+          <button class="btn btn-default btn-lg btn-block" role="alert">
+            <p>Advanced</p>
+            <br/>
+            <p>You are fluent in the language you are learning. The vast majority <br/>of the meeting will take place in the second language.</p>
+          </button>
+        
+            <br/>
+        
+        
+        <input id="next3" type="button" name="next" class="next action-button" value="Next"/>   
+        </div>    
     </fieldset><!--Abil Lev fieldset-->
-    <fieldset id="dialog2c">
+    <fieldset id="dialog2c" title="Create User - Select an Avatar">
+    <h3 class="fs-title">Create User</h3>
+          <h3 class="fs-subtitle">Select an Avatar</h3>
         <div class="row">
             <div class="col-lg-12" >
                 <h1 class="page-header">Select an Avatar
@@ -339,19 +370,19 @@
                     Turtle
                 </h3>
                 <input type="radio"/>
-                      </div>
-                    </div>
+            </div>
+        </div>
 
-                  </div>
+</div>
                                 
-                </div><!-- END COL-->
+</div><!-- END COL-->
                             
         
-                </div>
+    </div>
 
-              </div>       
-            </div> 
-          </div>      
+    </div>       
+    </div> 
+    </div>      
   
         <input type="submit" name="submit" class="submit action-button" value="Submit"/>        
     </fieldset><!--Abil Lev fieldset-->

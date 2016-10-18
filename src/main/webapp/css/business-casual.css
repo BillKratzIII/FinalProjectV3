@@ -370,3 +370,88 @@ footer p {
         height: 250px;
         width: 250px;
       }
+
+#profileName {
+        
+    
+    margin-top: 25px;
+      }
+#profilePic {
+        
+    height: 275px;
+    width: 275px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-image: 20px;
+      }
+
+#messagePic {
+        
+    height: 250px;
+    width: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-image: 20px;
+      }
+
+#profileBio {
+        
+    margin-top: 20px;
+    margin-bottom: 25px; 
+    
+      }
+
+#profileLanguage {
+        
+        height: 350px;
+        width: 100%;
+      }
+
+#profileLocation {
+        
+        height: 350px;
+        width: 100%;
+      }
+
+#profileButton {
+        
+        height: 350px;
+        width: 100%;
+      }
+#messageName{
+
+    text-align: center;
+    text-decoration: underline;
+}
+
+#langandloc{
+
+
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+#userlangandloc{
+
+
+    text-align: center;
+    
+    margin-bottom: 25px;
+}
+
+#findMatchButton {
+
+    width: 80%;
+    align-content: center;
+    margin-bottom: 10px;
+}
+
+#indUserMatch {
+  
+    padding-bottom: 15px;
+}

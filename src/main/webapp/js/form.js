@@ -18,7 +18,7 @@ $( function() {
       });
     
   $("#next1").click(function() {
-    $("#dialog2a").dialog()
+    $("#dialog2a").dialog({width:350})
     });
   
 
@@ -27,20 +27,23 @@ $( function() {
     $("#dialog2a").remove()
     });
 
-   $("#dialog2c").hide();
+  $("#next2").click(function() {
+    $("#dialog2b").dialog({width:900})
+    });
+  
+ $("#dialog2c").hide();
   $("#next3").click(function() {
     $("#dialog2b").remove()
     });
 
   $("#next3").click(function() {
-    $("#dialog2c").dialog()
+    $("#dialog2c").dialog({width:1000})
     });
 
+  
 });
 
-  $("#next2").click(function() {
-    $("#dialog2b").dialog()
-    });
+  
 // put in function to close/hide previous step
   $( function() {
   $("#dialog3").hide();
