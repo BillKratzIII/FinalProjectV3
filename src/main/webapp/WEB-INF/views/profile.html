@@ -21,10 +21,11 @@
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery_popup.css" />
+
       
     <!-- <link href="css/dialog.css" rel="stylesheet"> -->
         <!-- Google Font -->
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/flick/jquery-ui.css" rel="stylesheet">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
   
    
 
@@ -34,7 +35,7 @@
 
 <body>
 <div class="divBackgroundImage" style="background-image: url(img/worldmap.jpg);">
-                    </div>
+</div>
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -63,96 +64,22 @@
             </div><!-- /.container-fluid -->
         </nav>
     <!-- Navigation -->
-       
-<div class="container">
-    
-    <section class="main-section">
-            <div class="container" id="italy">
-                <div class="tab-container">
-                    <div id="item-one" style="display: block">
-                        <div class="row about">
-                            <div class="col-md-4 col-sm-12">
-                                <div class="about_me text-center">
-                                <h3><span th:text="${session.user.name}"></span></h3>
-                                <img src="img/girl1_360.png" class="img-responsive" alt="" />
-                                
-                                </div>
-                                
-                            </div><!-- END COL-->
-                            <div class="col-md-8 col-sm-6">
 
-                                <h3><strong>About Me: </strong></h3>
-                                    <p><strong><span th:text="${session.user.aboutMe}"></strong></p>
-                            </div><!-- END COL-->
-                       
-                           <!--  <div class="col-md-8 col-sm-6"> -->
-                              <div class="col-md-3 col-sm-6" style="text-align: center">
-                                <h4 class="about_title"><underline><strong>Languages</strong></underline></h4>
-                                <div class="progress-bar-linear">
-                                    <p class="progress-bar-text"><strong><span th:text="${session.user.firstLanguageId}"></strong></p>
-                                    <p class="progress-bar-text"><strong><span th:text="${session.user.learningLanguageId}"></strong></p>
-                                <div class="progress-bar">
-                                      <span data-percent="100"></span>
-                                </div>
-                                
-                                </div><!-- end class-->
-                                </div><!-- END COL-->
-                            <div class="col-md-3 col-sm-6" style="text-align: center">
-                                <h4 class="about_title"><underline><strong>Location</strong></underline></h4>
-                                <div class="progress-bar-linear">
-                                    <p class="progress-bar-text"><strong><span th:text="${session.user.city}"></strong></p>
-                                    <p class="progress-bar-text"><strong><span th:text="${session.user.state}"></strong></p>
-                                    <div class="progress-bar">
-                                        <span data-percent="100"></span>
-                                    </div>
-                                </div>
-                            </div><!-- END COL-->
-                            <div class="col-md-2 col-sm-6" style="text-align: center">
-                                <button class="btn btn-info btn-lg" role="alert"><a href ="matchlist.html">
-                                  Find a <br/>New Language<br/> Partner!!
-                                </a></button>
-                            </div>
-                          <!-- </div> --><!--end div class lang, loc, button-->
-                      </div><!--end class row about-->
-                    </div><!--div item one-->
-                  </div><!--tab container-->
+ <div class="container">
+ <section class="main-section">
 
-    <br/>
-    <br/>
+<div class="userProfile">
 
-<!-- <div class="well well-lg">
-  <h1>Messages</h1>
-    <div class="well well-sm">
-      <div class="panel panel-info" role="alert"><a href = "profile.html">
-        <img src="img/girl1small_360.png" class="img-responsive" alt="" /></a>
-          <div class="panel-heading">Message 1</div>
-          <div class="panel-body">Hola guy! Let's meet up and talk some Spanish
-    </div>
-      </div>
-    </div>
-  <div class="well well-sm">
-    <div class="panel panel-info" role="alert"><a href = "profile.html">
-      <img src="img/guy1small_360.png" class="img-responsive" alt="" /></a>
-        <div class="panel-heading">Message 2</div>
-          <div class="panel-body">Hola guy! Let's meet up and talk some Spanish
-          </div>
-    </div>
-  </div>
-  <div class="well well-sm">
-    <div class="panel panel-info" role="alert"><a href = "profile.html">
-      <img src="img/girl1small_360.png" class="img-responsive" alt="" /></a>
-        <div class="panel-heading">Message 3</div>
-          <div class="panel-body">Hola guy! Let's meet up and talk some Spanish
-          </div>
-    </div>
-  </div>
-</div> -->
+<div class="userMatches">
 
-<br/>
 
-      </div><!--italy container-->
-    </section>
-</div> <!-- /.container -->
+
+
+</div>
+
+ </section>
+ </div>      
+                  
   <br/>
   <br/>
   <br/>
@@ -166,13 +93,21 @@
   <br/>
   <br/>
     <footer>
-        <div class="container">
+        <div>
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <p>Copyright &copy; CC 2016</p>
                 </div>
-            </div>
-        </div>
+                <div style="text-align:center">
+                <a target="_blank" title="follow me on Twitter" href="http://www.twitter.com/ConvoCafeMD"><img alt="follow me on Twitter" src="https://c866088.ssl.cf3.rackcdn.com/assets/twitter30x30.png" border=0></a>
+                              
+                <a target="_blank" title="follow me on facebook" href="http://www.facebook.com/ConvoCafe"><img alt="follow me on facebook" src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png" border=0></a>
+                               
+                <a target="_blank" title="follow me on instagram" href="http://www.instagram.com/ConvoCafe"><img alt="follow me on instagram" src="https://c866088.ssl.cf3.rackcdn.com/assets/instagram30x30.png" border=0></a>
+                <a target="_blank" title="follow me on google plus" href="https://plus.google.com/PlaceHolder"><img alt="follow me on google plus" src="https://c866088.ssl.cf3.rackcdn.com/assets/googleplus30x30.png" border=0></a>
+                </div>
+            </div> 
+         </div>
     </footer>
 
 <div id="dialog3" title="Delete User">
@@ -276,28 +211,28 @@
 
 
 <div id="dialog5" title="Ability Levels">
-  <button class="btn btn-info btn-lg btn-block" role="alert"><a href = "profile.html">
+  <button class="btn btn-info btn-lg btn-block" role="alert">
     <p>Beginner</p>
       <br/>
-        <p>You are new to the language. You can say "hello" and ask where the library is, but that is about it. <br/> Learners will spend a lot of their time working through challenges with the languages together. <p></a>
+        <p>You are new to the language. You can say "hello" and ask where the library is, but that is about it. <br/> Learners will spend a lot of their time working through challenges with the languages together. <p>
   </button>
       <br/>
-  <button class="btn btn-warning btn-lg btn-block" role="alert"><a href = "profile.html">
+  <button class="btn btn-warning btn-lg btn-block" role="alert">
         <p>Intermediate</p>
       <br/>
-        <p>You are comfortable (or getting comfortable) with the language, but you are far from fluent.<br/> You will be able to have a conversation with few difficulties.</p></a>
+        <p>You are comfortable (or getting comfortable) with the language, but you are far from fluent.<br/> You will be able to have a conversation with few difficulties.</p>
   </button>
       <br/>
-  <button class="btn btn-success btn-lg btn-block" role="alert"><a href = "profile.html">
+  <button class="btn btn-success btn-lg btn-block" role="alert">
         <p>Advanced</p>
       <br/>
-        <p>You are fluent in the language you are learning. The vast majority <br/>of the meeting will take place in the second language.</p></a>
+        <p>You are fluent in the language you are learning. The vast majority <br/>of the meeting will take place in the second language.</p>
   </button>
       <br/>
-  <button class="btn btn-primary btn-lg btn-block" role="alert"><a href = "profile.html">
+  <button class="btn btn-primary btn-lg btn-block" role="alert">
       <p>Teaching Track</p>
       <br/>
-      <p>You are willing to volunteer your services and work with learners in order to help<br/> learn a new language. You are open to working with people in any of the other 3 tracks.</p></a>
+      <p>You are willing to volunteer your services and work with learners in order to help<br/> learn a new language. You are open to working with people in any of the other 3 tracks.</p>
   </button>
 </div>
 
@@ -306,10 +241,10 @@
     <script src= "https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src= "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript"></script>
-    
+    <script src="js/profile.js"></script>
     <script src="js/form.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery_popup.js"></script>
+    
     <!-- Bootstrap Core JavaScript -->
 
     
