@@ -43,7 +43,20 @@ public class UserServiceImpl implements UserService{
 		userDAO.deleteUser(userId);
 	}
 
+	@Override
+	public User getUserByEmail(String email){
+		User obj = userDAO.getUserByEmail(email);
+		return obj;
+	}
 	
+	@Override
+	public boolean verification(User userFromDB, User userLoggingIn){
+		boolean passOrFail=false;
+		if (userFromDB.getPassword().equals(userLoggingIn.getPassword())){
+			passOrFail = true;
+		}
+		return passOrFail;
+	}
 	
 	
 }

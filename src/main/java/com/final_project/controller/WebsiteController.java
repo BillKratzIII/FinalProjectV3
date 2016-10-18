@@ -1,14 +1,18 @@
 package com.final_project.controller;
 
 import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.final_project.entity.User;
+import com.final_project.service.UserService;
+
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -16,10 +20,12 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class WebsiteController {
 	
+	@Autowired
+	private UserService userService;
+	
 	@RequestMapping("")
     @ResponseBody
     public ModelAndView home(HttpSession sessionObj, ModelAndView mv){
-            sessionObj.setAttribute("message" , "This is something in the session");
             mv.setViewName("index");
             return mv;
     } 
@@ -43,18 +49,41 @@ public class WebsiteController {
         return mv;
     }
 	
+	@RequestMapping("/createuser")
+	public ModelAndView createuser(HttpSession sessionObj, ModelAndView mv){
+		return mv;
+	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ResponseEntity<Void> userLogin(@RequestBody User user, HttpSession sessionObj) {
-        
-        sessionObj.setAttribute("user", user);
-        return new ResponseEntity<Void>(HttpStatus.OK);
+    public ResponseEntity<Void> userLogin(@ModelAttribute User user, HttpSession sessionObj, ModelAndView mv) {
+		User u = new User();
+		
+		try{
+			u = userService.getUserByEmail(user.getEmail());
+		System.out.println("User logging in is  " + u.getName());
+		}catch(IndexOutOfBoundsException e){
+			sessionObj.setAttribute("loginMessage", "Email or Password do not match");
+		}
+		if(userService.verification(user, u)){
+			sessionObj.setAttribute("loginMessage", "");
+			sessionObj.setAttribute("user", u);
+			sessionObj.setAttribute("loginMessage", u.getName() + " Successfully logged in");
+			System.out.println("Success!");
+			return new ResponseEntity<Void>(HttpStatus.OK);
+		}else{
+			sessionObj.setAttribute("loginMessage", "Email or Password do not match");
+			mv.setViewName("redirect:/");
+			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
+		}
+		
 	}
 	
 	@RequestMapping("/logout")
 	public ModelAndView logout(HttpSession sessionObj, ModelAndView mv){
-		sessionObj.invalidate();
+		sessionObj.removeAttribute("user");
+		sessionObj.setAttribute("loginMessage", "You have successfully logged out");
 		System.out.println("session cleared");
-		mv.setViewName("index");
+		mv.setViewName("redirect:/");
 		return mv;
 	}
 	

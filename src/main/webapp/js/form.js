@@ -26,6 +26,10 @@ $( function() {
   $("#next2").click(function() {
     $("#dialog2a").remove()
     });
+  
+  $("#next2").click(function() {
+	    $("#dialog2b").dialog()
+	    });
 
    $("#dialog2c").hide();
   $("#next3").click(function() {
@@ -38,9 +42,7 @@ $( function() {
 
 });
 
-  $("#next2").click(function() {
-    $("#dialog2b").dialog()
-    });
+  
 // put in function to close/hide previous step
   $( function() {
   $("#dialog3").hide();

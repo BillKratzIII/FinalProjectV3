@@ -24,6 +24,16 @@ public class UserDAOImpl implements IUserDAO{
 		return (List<User>) hibernateTemplate.find(hql);
 	}
 	
+	@SuppressWarnings("unchecked")
+	@Override
+	public User getUserByEmail(String email){
+		User u = new User();
+		String hql = "From User AS u WHERE u.email = '" + email + "'";
+		List<User> l = (List<User>) hibernateTemplate.find(hql);
+		u = (User) l.get(0);
+		return u;
+	}
+	
 	@Override
 	public boolean addUser(User user) {
 		hibernateTemplate.save(user);
