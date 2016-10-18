@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Convo Cafe | Send Message</title>
+</head>
+<body>
+	<form>
+		<label>Email Address:</label><br>
+		<input type="text" id="address"><br>
+		<label>Subject:</label><br>
+		<input type="text" id="subject"><br>
+		<label>Message:</label><br>
+		<textarea id="message" rows="5"></textarea><br>
+	</form>
+	<button id="submitButton">Submit</button>
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script>
+		$(document).ready(function(){
+			console.log("testing js");
+			$("#sendEmailButton").click(function(){
+				console.log("inside submit button");
+				$.ajax({
+					url: "/send-mail",
+					type:"POST",
+					data:JSON.stringify({
+						"address" : $("#address").val(),
+						"subject" : $("#subject").val(),
+						"message" : $("#message").val()
+					}),
+					contentType:"application/json; charset=utf-8",
+					dataType:"json",
+					complete: function(){
+						console.log("Email Sent?");
+						location.href = "/profile.html";
+					},
+					error: function(){
+						console.log("error");
+					}
+				});
+			});
+		}); 
+	</script>
+</body>
+</html>

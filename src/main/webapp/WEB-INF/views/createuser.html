@@ -21,7 +21,7 @@
     
     <link href="css/dialog.css" rel="stylesheet"> 
   
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/flick/jquery-ui.css" rel="stylesheet">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
    
 
 </head>
@@ -37,15 +37,17 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         
+
         <li><a href="/">Home</a></li>
         <li><a href="/profile"><div>My Profile</div></a></li>
         <li><a href="/participatingrestaurants">Participating Restaurants</a></li>
+
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Options<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a id="popupLI">Log In</a></li>
-            <li><a id="popupCU">Create an Account</a></li>
+            <li><a href="/createuser">Create an Account</a></li>
             <li><a id="popupAL">Ability Level Descriptions</a></li>
             <li><a href="/logout">Log Out</a></li>
           </ul>
@@ -58,12 +60,14 @@
             </div><!-- /.container-fluid -->
         </nav>
 
-    <div class="container" style="background-color:white;">
+    <div class="container">
 
-         <form id="createUserForm" name="createUserForm" action="post">
-     
-        <h3 class="fs-title">Create User</h3>
-          
+            <div class="row">
+              <div class="box">
+                <div class="col-lg-12 text-center">
+              <form id="createUserForm"> 
+            <div class="well well-lg"> 
+            <h3 class="fs-subtitle">Step 1</h3>
       <div class="form-group">
           <label for="name">Name</label>
             <input type="text" class="form-control" name="name" id="name" placeholder="Name">
@@ -81,7 +85,29 @@
             <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
       
       </div>
-      <div class="dropdown">
+      </div>
+
+             <div class="well well-lg"> 
+            <h3 class="fs-subtitle">Step 2</h3>
+          <div class="form-group">
+        <label for="streetAddress">Street Address</label>
+            <input type="text" class="form-control" name="streetAddress" id="streetAddress" placeholder="Street Address">
+
+        </div>
+       <div class="form-group">
+        <label for="city">City</label>
+            <input type="text" class="form-control" name="city" id="city" placeholder="City">
+        </div>
+        <div class="form-group">
+          <label for="state">State</label>
+            <input type="text" class="form-control" name="state" id="state" placeholder="State">
+        </div>
+        <div class="form-group">
+          <label for="zip">Zip Code</label>
+            <input type="text" class="form-control" name="zip" id="zip" placeholder="Zip Code">
+        </div>
+        
+         <div class="dropdown">
       	<label for="ageRangeId">Age Range</label>
 				<select class="form-control" name="ageRangeId" id="ageRangeId">
 					<option value="1">18-22</option>
@@ -100,83 +126,189 @@
 				</select>
 		</div>
         
-      
-     
-
-     
-       <div class="form-group">
-        <label for="streetAddress">Street Address</label>
-            <input type="text" class="form-control" name="streetAddress" id="streetAddress" placeholder="Street Address">
-        </div>
-       <div class="form-group">
-        <label for="city">City</label>
-            <input type="text" class="form-control" name="city" id="city" placeholder="City">
-        </div>
-        <div class="form-group">
-          <label for="state">State</label>
-            <input type="text" class="form-control" name="state" id="state" placeholder="State">
-        </div>
-        <div class="form-group">
-          <label for="zip">Zip Code</label>
-            <input type="text" class="form-control" name="zip" id="zip" placeholder="Zip Code">
-        </div>
-        
         <div class="dropdown">
-        	<label for="firstLanguageId">First Language</label>
-				<select class="form-control" name="firstLanguageId" id="firstLanguageId">
-					<option value="1">English</option>
-					<option value="2">Spanish</option>
-					<option value="3">French</option>
-					<option value="4">Italian</option>
-					<option value="5">German</option>
-					<option value="6">Japanese</option>
-				</select>
-		</div>
-		<div class="dropdown">
-			<label for="learningLanguageId">Learning Language</label>
-				<select class="form-control" name="learningLanguageId" id="learningLanguageId">
-					<option value="1">English</option>
-					<option value="2">Spanish</option>
-					<option value="3">French</option>
-					<option value="4">Italian</option>
-					<option value="5">German</option>
-					<option value="6">Japanese</option>
-				</select>
-			</div>
+            <label for="firstLanguageId">First Language</label>
+                <select class="form-control" name="firstLanguageId" id="firstLanguageId">
+                    <option value="1">English</option>
+                    <option value="2">Spanish</option>
+                    <option value="3">French</option>
+                    <option value="4">Italian</option>
+                    <option value="5">German</option>
+                    <option value="6">Japanese</option>
+                </select>
+        </div>
+        <div class="dropdown">
+            <label for="learningLanguageId">Learning Language</label>
+                <select class="form-control" name="learningLanguageId" id="learningLanguageId">
+                    <option value="1">English</option>
+                    <option value="2">Spanish</option>
+                    <option value="3">French</option>
+                    <option value="4">Italian</option>
+                    <option value="5">German</option>
+                    <option value="6">Japanese</option>
+                </select>
+            </div>
+        </div>
+
+
+
+         <div class="well well-lg"> 
+            <h3 class="fs-subtitle">Choose Your Ability Level</h3>
         
-       
+         
+          
+            <label for="skillLevelId">Skill Level</label>
+            <div class="dropdown">
+                    <select class="form-control" name="skillLevelId" id="skillLevelId">
+                        <option value="1">Beginner</option>
+                        <option value="2">Intermediate</option>
+                        <option value="3">Advanced</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                    <label for="aboutMe">About Me:</label>
+                    <textarea class="form-control" rows="5" name="aboutMe" id="aboutMe"
+                        placeholder="optional"></textarea>
+            </div>
+
+        </div>
+
+
+
+
+
+    <div class="well well-lg">
+        <div class="row" >
+              <div class="box">
+                <div class="col-lg-12 text-center">
+                
+                    <h3 class="fs-title">Create User</h3>
+                    <h3 class="fs-subtitle">Select an Avatar</h3>
+                <div class="row">
+                <div class="col-lg-12" >
+                    <h1 class="page-header">Select an Avatar
+                        <small>for your profile!</small>
+                    </h1>
+                </div>
+                </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-3 portfolio-item">
+                
+                <input type="radio" name="avitar" value="fish">
+                    <img height="150px" width="150px" class="img-responsive" src="img/fish.png" alt="">
+                    <h3>Fish</h3>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                
+                <input type="radio" name="avitar" value="cat">
+                    <img height="150px" width="150px" class="img-responsive" src="img/cat.png" alt="">
+                    <h3>Cat</h3>
+            </div>
+            
+            <div class="col-md-3 portfolio-item">
+                
+                <input type="radio" name="avitar" value="whale">
+                    <img height="150px" width="150px" class="img-responsive" src="img/whale.png" alt="">
+                    <h3>whale</h3>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                
+                <input type="radio" name="avitar" value="shark">
+                    <img height="150px" width="150px" class="img-responsive" src="img/shark.png" alt="">
+                    <h3>Shark</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-3 portfolio-item">
+                
+                <input type="radio" name="avitar" value="bird">
+                    <img height="150px" width="150px" class="img-responsive" src="img/bird.png" alt="">
+                    <h3>Bird</h3>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                
+                <input type="radio" name="avitar" value="pony">
+                    <img height="150px" width="150px" class="img-responsive" src="img/pony.png" alt="">
+                    <h3>Pony</h3>
+            </div>
+            
+            <div class="col-md-3 portfolio-item">
+                
+                <input type="radio" name="avitar" value="cow">
+                    <img height="150px" width="150px" class="img-responsive" src="img/cow.png" alt="">
+                    <h3>Cow</h3>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                
+                <input type="radio" name="avitar" value="duck">
+                    <img height="150px" width="150px" class="img-responsive" src="img/duck.png" alt="">
+                    <h3>Duck</h3>
+            </div>
+        </div>
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-3 portfolio-item">
+                
+                <input type="radio" name="avitar" value="bunny">
+                    <img height="150px" width="150px" class="img-responsive" src="img/bunny.png" alt="">
+                    <h3>Bunny</h3>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                
+                <input type="radio" name="avitar" value="dog">
+                    <img height="150px" width="150px" class="img-responsive" src="img/dog.png" alt="">
+                    <h3>Dog</h3>
+            </div>
+            
+            <div class="col-md-3 portfolio-item">
+                
+                <input type="radio" name="avitar" value="turtle">
+                    <img height="150px" width="150px" class="img-responsive" src="img/turtle.png" alt="">
+                    <h3>Turtle</h3>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                
+                <input type="radio" name="avitar" value="bluebird">
+                    <img height="150px" width="150px" class="img-responsive" src="img/bluebird.png" alt="">
+                    <h3>Bluebird</h3>
+            </div>
+        </div>
+
+
+
+
+                </div>
+
+            </div>
+            <button class="btn btn-default" id="createUserButton">Submit</button> 
+            
+        </div>
+        </div> <!--well-->
+           
+    </form>
         
-      
+            
 
-     
-    	<label for="skillLevelId">Skill Level</label>
-        	<div class="dropdown">
-					<select class="form-control" name="skillLevelId" id="skillLevelId">
-						<option value="1">Beginner</option>
-						<option value="2">Intermediate</option>
-						<option value="3">Advanced</option>
-					</select>
-			</div>
-			<div class="form-group">
-					<label for="aboutMe">About Me:</label>
-					<textarea class="form-control" rows="5" name="aboutMe" id="aboutMe"
-						placeholder="optional"></textarea>
-			</div>
-  
-              
-      
-               
-  					 
-        <button class="btn btn-default" id="createUserButton">Submit</button>       
-    
-  </form><!--create user form tag-->   
-            
-            
-            
-    </div><!--container-->
+        </div><!--ends box-->
+    </div><!--row-->
+</div><!--container-->
     
 
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+    
     <!-- /.container -->
      <footer>
         <div>
@@ -184,16 +316,40 @@
                 <div class="col-lg-12 text-center">
                     <p>Copyright &copy; CC 2016</p>
                 </div>
-            </div>
-        </div>
+                <div style="text-align:center">
+                <a target="_blank" title="follow me on Twitter" href="http://www.twitter.com/ConvoCafeMD"><img alt="follow me on Twitter" src="https://c866088.ssl.cf3.rackcdn.com/assets/twitter30x30.png" border=0></a>
+                              
+                <a target="_blank" title="follow me on facebook" href="http://www.facebook.com/ConvoCafe"><img alt="follow me on facebook" src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png" border=0></a>
+                               
+                <a target="_blank" title="follow me on instagram" href="http://www.instagram.com/ConvoCafe"><img alt="follow me on instagram" src="https://c866088.ssl.cf3.rackcdn.com/assets/instagram30x30.png" border=0></a>
+                <a target="_blank" title="follow me on google plus" href="https://plus.google.com/PlaceHolder"><img alt="follow me on google plus" src="https://c866088.ssl.cf3.rackcdn.com/assets/googleplus30x30.png" border=0></a>
+                </div>
+            </div> 
+         </div>
     </footer>
 
+    <div id="dialog1" title="Log In">
+        
+            <form id="loginForm" method="post">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+             </div>
+  
+            <button class="btn btn-default" id="loginButton">Submit</button>
+            <span style="color:red;" th:text="${session.loginMessage}">
+        </form>
+
+    </div>
+
 
   
-  
-  
 
-    <!-- </div>create user form div -->
+ 
   
     <!-- jQuery -->
     
@@ -213,12 +369,18 @@
     
     <script>
     $(function(){
-    	
+    	$("#loginButton").click(function(event){
+    		event.preventDefault();
+    		$.post("/login", $("#loginForm").serialize(), function(data){
+    			location.href = "/profile";
+    		}).error(function(){
+    			alert("Email or Password do not match");
+    			
+    		})
+    	});
     	
     	$("#createUserButton").click(function(event){
     		event.preventDefault();
-    		console.log($("#dialog2").serialize());
-    		console.log($("#createUserForm").serialize());
     		$.post("/user", $("#createUserForm").serialize(), function(data){
     			console.log("Success")
     			location.href = "/profile";

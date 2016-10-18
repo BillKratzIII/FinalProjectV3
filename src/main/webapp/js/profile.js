@@ -63,17 +63,6 @@ $(function() {
 		
 	},"json");
 	
-	//$.ajax({ 
-    //	type: "GET", 
-    //	url: "/session", 
-    //	data: { get_param: 'value' }, 
-    //	dataType: "json",
-    //	success: function (data) { 
-    //		console.log(data);
-    //    	user = data;
-            	
-    //    }
-	//});
 	
     // var user = [
 
@@ -147,6 +136,7 @@ $(function() {
         name: 'Beth',
         learning_language: 'Spanish',
         country: 'spain',
+        email: 'dangelo0011@gmail.com',
         learning_language_id: '1',
         user_city: 'Baltimore',
         user_ability_level: 'Advanced',
@@ -159,6 +149,7 @@ $(function() {
          name: 'Bill',
          learning_language: 'Italian',
          country: 'italy',
+         email: 'dangelo0011@gmail.com',
          learning_language_id: '2',
          user_city: 'Dundalk',
          user_ability_level: 'Beginner',
@@ -171,6 +162,7 @@ $(function() {
          name: 'Forest',
          learning_language: 'French',
          country: 'france',
+         email: 'dangelo0011@gmail.com',
          learning_language_id: '3',
          user_city: 'Essex',
          user_ability_level: 'Advanced',
@@ -183,6 +175,7 @@ $(function() {
          name: 'John',
          learning_language: 'German',
          country: 'brazil',
+         email: 'dangelo0011@gmail.com',
          learning_language_id: '4',
          user_city: 'Columbia',
          user_ability_level: 'Advanced',
@@ -203,7 +196,7 @@ $(function() {
                     + "<div class=\"about_me text-center\">"
                     + "<h3>" + this.name + "</h3>"
                     + "<div id=\"messagePic\">"
-                    + "<img src=\"img/" + this.img + ".PNG\" class=\"img-responsive\" alt=\"\" />"
+                    + "<img src=\"img/" + this.img + ".png\" class=\"img-responsive\" alt=\"\" />"
                     + "</div>"
                     + "</div>"
                     + "</div>"
@@ -235,13 +228,14 @@ $(function() {
                     
                     + "<div class=\"col-md-4\" style=\"text-align: center\">"
                     + "<button id=\"sendEmailButton\" class=\"btn btn-info btn-lg\" role=\"alert\">"
+                    + "<a href=\"\sendmessage.html\"></a>"
                     + "<span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span>"
-                    + "Send " + this.name + " a message!!</button>"
+                    + " Send " + this.name + " a message!!</button>"
                     + "</div>"
                     + "<div class=\"col-md-4\" style=\"text-align: center\">"
                     + "<button id=\"sendEmailButton\" class=\"btn btn-info btn-lg\" role=\"alert\">"
                     + "<span class=\"glyphicon glyphicon-globe\" aria-hidden=\"true\"></span>"
-                    + "Find a " + this.learning_language + " Restaurant Near You!!</button>"
+                    + " Find a " + this.learning_language + " Restaurant Near You!!</button>"
                     + "</div>"
                     + "</div>"
                     + "</div>"
@@ -250,7 +244,27 @@ $(function() {
 
                     )
                     
-                                     
+         	$("#sendEmailButton").click(function(){
+		console.log("inside submit button");
+		$.ajax({
+			url: "/send-mail",
+			type:"POST",
+			data:JSON.stringify({
+				"address" : $("#address").val(),
+				"subject" : $("#subject").val(),
+				"message" : $("#message").val()
+			}),
+			contentType:"application/json; charset=utf-8",
+			dataType:"json",
+			complete: function(){
+				console.log("Email Sent?");
+				location.href = "/profile.html";
+			},
+			error: function(){
+				console.log("error");
+				}
+			});
+         	});                            
                     
 
                     $('#messageBackground').addClass(this.country);
@@ -258,3 +272,4 @@ $(function() {
          });
          
 });
+
