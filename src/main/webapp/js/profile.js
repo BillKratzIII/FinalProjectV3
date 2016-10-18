@@ -1,4 +1,5 @@
 $(function() {
+	$(".userMatches").hide();
 	var user;
 	
 	$.get("/session", function(data){
@@ -22,8 +23,18 @@ $(function() {
                 + "<p id=profileBio><strong>" +user.aboutMe +"</strong></p>"
                 + "</div>"
                 
-                + "<div class=\"col-md-4\" style=\"text-align: center\">"
-                + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Language</strong></h4>"
+                + "<div class=\"col-md-3\" style=\"text-align: center\">"
+                + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Native Language</strong></h4>"
+                + "<div class=\"progress-bar-linear\">"
+                + "<p><strong>" + user.nativeLanguage + "</strong></p>"
+                + "<div class=\"progress-bar\">"
+                + "<span data-percent=\"100\"></span>"
+                + "</div>"
+                + "</div>"
+                + "</div>"
+                
+                + "<div class=\"col-md-3\" style=\"text-align: center\">"
+                + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Learning Language</strong></h4>"
                 + "<div class=\"progress-bar-linear\">"
                 + "<p><strong>" + user.learningLanguage + "</strong></p>"
                 + "<div class=\"progress-bar\">"
@@ -31,7 +42,7 @@ $(function() {
                 + "</div>"
                 + "</div>"
                 + "</div>"
-                + "<div class=\"col-md-4\" style=\"text-align: center\">"
+                + "<div class=\"col-md-3\" style=\"text-align: center\">"
                 + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Location</strong></h4>"
                 + "<div class=\"progress-bar-linear\">"
                 + "<p id=\"userlangandloc\" class=\"progress-bar-text\"><strong>" 
@@ -51,14 +62,14 @@ $(function() {
                 + "</div>"
                 + "</div>"
                 + "</div>"
-                
-
-                
-
                 );
 
     	$('#messageBackground').addClass(user.learningLanguage);
 		
+    	 
+    	$("#findMatchButton").click(function() {
+    	    $(".userMatches").dialog({width:1250})
+    	});
 		
 		
 	},"json");
@@ -116,26 +127,16 @@ $(function() {
    // ];
 
         
+   
 
-});                  
-    
-$( function() {
-  $(".userMatches").hide(); 
-  $("#findMatchButton").click(function() {
-      $(".userMatches").dialog({width:1250})
-      }); 
-
-});  
-
- 
-$(function() {
     
      var users = [
 
      {
         name: 'Beth',
         learning_language: 'Spanish',
-        country: 'spain',
+        native_language: 'English',
+        country: 'Spanish',
         email: 'dangelo0011@gmail.com',
         learning_language_id: '1',
         user_city: 'Baltimore',
@@ -148,7 +149,8 @@ $(function() {
     
          name: 'Bill',
          learning_language: 'Italian',
-         country: 'italy',
+         native_language: 'French',
+         country: 'Italian',
          email: 'dangelo0011@gmail.com',
          learning_language_id: '2',
          user_city: 'Dundalk',
@@ -161,7 +163,8 @@ $(function() {
      {
          name: 'Forest',
          learning_language: 'French',
-         country: 'france',
+         native_language: 'Italian',
+         country: 'French',
          email: 'dangelo0011@gmail.com',
          learning_language_id: '3',
          user_city: 'Essex',
@@ -174,6 +177,7 @@ $(function() {
      {
          name: 'John',
          learning_language: 'German',
+         native_language: 'English',
          country: 'brazil',
          email: 'dangelo0011@gmail.com',
          learning_language_id: '4',
@@ -204,9 +208,19 @@ $(function() {
                     + "<h3><strong>About Me:</strong></h3>"
                     + "<p id=profileBio><strong>" +this.user_bio+"</strong></p>"
                     + "</div>"
+                   
                     
-                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
-                    + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Language</strong></h4>"
+                    + "<div class=\"col-md-3\" style=\"text-align: center\">"
+                    + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Native Language</strong></h4>"
+                    + "<div class=\"progress-bar-linear\">"
+                    + "<p><strong>" + this.native_language + "</strong></p>"
+                    + "<div class=\"progress-bar\">"
+                    + "<span data-percent=\"100\"></span>"
+                    + "</div>"
+                    + "</div>"
+                    + "</div>"
+                    + "<div class=\"col-md-3\" style=\"text-align: center\">"
+                    + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Learning Language</strong></h4>"
                     + "<div class=\"progress-bar-linear\">"
                     + "<p><strong>" + this.learning_language + "</strong></p>"
                     + "<div class=\"progress-bar\">"
@@ -214,7 +228,7 @@ $(function() {
                     + "</div>"
                     + "</div>"
                     + "</div>"
-                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
+                    + "<div class=\"col-md-3\" style=\"text-align: center\">"
                     + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Location</strong></h4>"
                     + "<div class=\"progress-bar-linear\">"
                     + "<p id=\"userlangandloc\" class=\"progress-bar-text\"><strong>" 
@@ -226,14 +240,14 @@ $(function() {
                     + "</div>"
                     + "</div>"
                     
-                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
+                    + "<div class=\"col-md-3\" style=\"content-align: center\">"
                     + "<button id=\"sendEmailButton\" class=\"btn btn-info btn-lg\" role=\"alert\">"
                     + "<a href=\"\sendmessage.html\"></a>"
                     + "<span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span>"
                     + " Send " + this.name + " a message!!</button>"
                     + "</div>"
-                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
-                    + "<button id=\"sendEmailButton\" class=\"btn btn-info btn-lg\" role=\"alert\">"
+                    + "<div class=\"col-md-3\" style=\"content-align: center\">"
+                    + "<button id=\"getRestaurantButton\" class=\"btn btn-info btn-lg\" role=\"alert\">"
                     + "<span class=\"glyphicon glyphicon-globe\" aria-hidden=\"true\"></span>"
                     + " Find a " + this.learning_language + " Restaurant Near You!!</button>"
                     + "</div>"
@@ -241,35 +255,13 @@ $(function() {
                     + "</div>"
                     + "</div>"
                     
-
-                    )
-                    
-         	$("#sendEmailButton").click(function(){
-		console.log("inside submit button");
-		$.ajax({
-			url: "/send-mail",
-			type:"POST",
-			data:JSON.stringify({
-				"address" : $("#address").val(),
-				"subject" : $("#subject").val(),
-				"message" : $("#message").val()
-			}),
-			contentType:"application/json; charset=utf-8",
-			dataType:"json",
-			complete: function(){
-				console.log("Email Sent?");
-				location.href = "/profile.html";
-			},
-			error: function(){
-				console.log("error");
-				}
-			});
-         	});                            
                     
 
-                    $('#messageBackground').addClass(this.country);
+                    )                            
+                    
+
+            $('#messageBackground').addClass(this.country);
                 
          });
          
 });
-
