@@ -1,6 +1,81 @@
 $(function() {
-    
-     var user = [
+	var user;
+	
+	$.get("/session", function(data){
+		console.log(data);
+		user=data;
+		
+		$('.userProfile').append("<div class=\"container\" id=\""+user.learningLanguage+"\">"
+                + "<div class=\"tab-container\">"
+                + "<div id=\"item-one\" style=\"display: block\">"
+                + "<div class=\"row about\">"
+                + "<div class=\"col-md-3 col-sm-12\">"
+                + "<div class=\"about_me text-center\">"
+                + "<h3>" + user.name + "</h3>"
+                + "<div id=\"profilePic\">"
+                + "<img src=\"img/" + user.avitar + ".png\" class=\"img-responsive\" alt=\"\" />"
+                + "</div>"
+                + "</div>"
+                + "</div>"
+                + "<div class=\"col-md-9 col-sm-6\">"
+                + "<h3><strong>About Me:</strong></h3>"
+                + "<p id=profileBio><strong>" +user.aboutMe +"</strong></p>"
+                + "</div>"
+                
+                + "<div class=\"col-md-4\" style=\"text-align: center\">"
+                + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Language</strong></h4>"
+                + "<div class=\"progress-bar-linear\">"
+                + "<p><strong>" + user.learningLanguage + "</strong></p>"
+                + "<div class=\"progress-bar\">"
+                + "<span data-percent=\"100\"></span>"
+                + "</div>"
+                + "</div>"
+                + "</div>"
+                + "<div class=\"col-md-4\" style=\"text-align: center\">"
+                + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Location</strong></h4>"
+                + "<div class=\"progress-bar-linear\">"
+                + "<p id=\"userlangandloc\" class=\"progress-bar-text\"><strong>" 
+                + user.city + ", " + user.state + "</strong></p>"
+                + "<div class=\"progress-bar\">"
+                + "<span data-percent=\"100\"></span>"
+                
+                + "</div>"
+                + "</div>"
+                + "</div>"
+                
+                + "<div class=\"col-md-9\" style=\"text-align: center\">"
+                + "<button id=\"findMatchButton\" class=\"btn btn-info btn-lg\" role=\"alert\">"
+                + "Find a New Language Partner!!</button>"
+                
+                + "</div>"
+                + "</div>"
+                + "</div>"
+                + "</div>"
+                
+
+                
+
+                );
+
+    	$('#messageBackground').addClass(user.learningLanguage);
+		
+		
+		
+	},"json");
+	
+	//$.ajax({ 
+    //	type: "GET", 
+    //	url: "/session", 
+    //	data: { get_param: 'value' }, 
+    //	dataType: "json",
+    //	success: function (data) { 
+    //		console.log(data);
+    //    	user = data;
+            	
+    //    }
+	//});
+	
+    // var user = [
 
     //  {
     //     name: 'Beth',
@@ -13,18 +88,18 @@ $(function() {
     //     user_bio: 'is simply dummy text of the printing and typesetting indust ry.asdkksk mc printing and typesetting industry. ms printing and typesetting industry. ksie dmsmakak ksksks kdhdhshsh sjsjsj'
     // }
 
-     {
+    // {
     
-         name: 'Bill',
-         learning_language: 'Italian',
-         country: 'italy',
-         learning_language_id: '2',
-         user_city: 'Dundalk',
-         user_ability_level: 'Beginner',
-         img: 'shark',
-         user_bio: 'is simply dummy text of the printing and printing and typesetting industry. printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy tejksdhfsdjkf'
+    //     name: 'Bill',
+     //    learning_language: 'Italian',
+    //     country: 'italy',
+    //     learning_language_id: '2',
+    //     user_city: 'Dundalk',
+    //     user_ability_level: 'Beginner',
+    //     img: 'shark',
+    //     user_bio: 'is simply dummy text of the printing and printing and typesetting industry. printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy tejksdhfsdjkf'
     
-      }
+    //  }
 
      // {
      //     name: 'Forest',
@@ -49,66 +124,11 @@ $(function() {
      //     user_bio: 'is simply dummy text of the printing and typesetting industry. Software like Aldus PageMaker including versions of Lorem Ipsum printing and typesetting industry. printing and typesetting industry. printing and typesetting industry.'
     
      // }
-    ];
+   // ];
 
-    $.each(user, function(){
-        $('.userProfile').append("<div class=\"container\" id=\""+this.country+"\">"
-                    + "<div class=\"tab-container\">"
-                    + "<div id=\"item-one\" style=\"display: block\">"
-                    + "<div class=\"row about\">"
-                    + "<div class=\"col-md-3 col-sm-12\">"
-                    + "<div class=\"about_me text-center\">"
-                    + "<h3>" + this.name + "</h3>"
-                    + "<div id=\"profilePic\">"
-                    + "<img src=\"img/" + this.img + ".png\" class=\"img-responsive\" alt=\"\" />"
-                    + "</div>"
-                    + "</div>"
-                    + "</div>"
-                    + "<div class=\"col-md-9 col-sm-6\">"
-                    + "<h3><strong>About Me:</strong></h3>"
-                    + "<p id=profileBio><strong>" +this.user_bio+"</strong></p>"
-                    + "</div>"
-                    
-                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
-                    + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Language</strong></h4>"
-                    + "<div class=\"progress-bar-linear\">"
-                    + "<p><strong>" + this.learning_language + "</strong></p>"
-                    + "<div class=\"progress-bar\">"
-                    + "<span data-percent=\"100\"></span>"
-                    + "</div>"
-                    + "</div>"
-                    + "</div>"
-                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
-                    + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Location</strong></h4>"
-                    + "<div class=\"progress-bar-linear\">"
-                    + "<p id=\"userlangandloc\" class=\"progress-bar-text\"><strong>" 
-                    + this.user_city + ", " + this.user_state + "</strong></p>"
-                    + "<div class=\"progress-bar\">"
-                    + "<span data-percent=\"100\"></span>"
-                    
-                    + "</div>"
-                    + "</div>"
-                    + "</div>"
-                    
-                    + "<div class=\"col-md-9\" style=\"text-align: center\">"
-                    + "<button id=\"findMatchButton\" class=\"btn btn-info btn-lg\" role=\"alert\">"
-                    + "Find a New Language Partner!!</button>"
-                    
-                    + "</div>"
-                    + "</div>"
-                    + "</div>"
-                    + "</div>"
-                    
+        
 
-                    
-
-                    )
-
-        $('#messageBackground').addClass(this.country);
-                }
-        )}
-    );
-                  
+});                  
     
 $( function() {
   $(".userMatches").hide(); 
@@ -233,11 +253,8 @@ $(function() {
                                      
                     
 
-        $('#messageBackground').addClass(this.country);
+                    $('#messageBackground').addClass(this.country);
                 
-                })
-        });
-
-
-       
-
+         });
+         
+});

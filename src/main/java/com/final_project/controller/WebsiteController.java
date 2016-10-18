@@ -1,5 +1,7 @@
 package com.final_project.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.final_project.entity.User;
+import com.final_project.entity.WholeUser;
 import com.final_project.service.UserService;
 
 import org.springframework.web.servlet.ModelAndView;
@@ -66,8 +69,9 @@ public class WebsiteController {
 		}
 		if(userService.verification(user, u)){
 			sessionObj.setAttribute("loginMessage", "");
-			sessionObj.setAttribute("user", u);
-			sessionObj.setAttribute("loginMessage", u.getName() + " Successfully logged in");
+			WholeUser wholeUser = WholeUser.makeWholeUser(u);
+			sessionObj.setAttribute("user", wholeUser);
+			sessionObj.setAttribute("loginMessage", wholeUser.getName() + " Successfully logged in");
 			System.out.println("Success!");
 			return new ResponseEntity<Void>(HttpStatus.OK);
 		}else{
@@ -85,6 +89,12 @@ public class WebsiteController {
 		System.out.println("session cleared");
 		mv.setViewName("redirect:/");
 		return mv;
+	}
+	
+	@RequestMapping(value= "/session", method = RequestMethod.GET)
+	public ResponseEntity<Object> getUserInSession(HttpSession sessionObj) {
+		Object obj = sessionObj.getAttribute("user");
+		return new ResponseEntity<Object>(obj, HttpStatus.OK);
 	}
 	
 }
