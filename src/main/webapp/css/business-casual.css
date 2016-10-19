@@ -227,6 +227,11 @@ footer p {
     background: linear-gradient(to right, pink, #ffff94, pink); /* Standard syntax (must be last) */
 }
 
+#null {
+	height: 100%;
+	background-color:white;
+}
+
 #msform {
     width: 400px;
     margin: 50px auto;
