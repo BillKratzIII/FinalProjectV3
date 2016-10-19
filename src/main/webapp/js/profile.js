@@ -290,6 +290,85 @@ $(function() {
          user_bio: 'is simply dummy text of the printing and typesetting industry. Software like Aldus PageMaker including versions of Lorem Ipsum'
     
      }
+<<<<<<< HEAD
+     ];
+
+         $.each(users, function(){
+        $('.userMatches').append("<div id=\"indUserMatch\">"
+
+                    +"<div class=\"container\" id=\""+this.country+"\">"
+                    + "<div class=\"tab-container\">"
+                    + "<div id=\"item-one\" style=\"display: block\">"
+                    + "<div class=\"row about\">"
+                    + "<div class=\"col-md-3 col-sm-12\">"
+                    + "<div class=\"about_me text-center\">"
+                    + "<h3>" + this.name + "</h3>"
+                    + "<img height=\"165px\" width=\"165px\" class=\"center-block img-responsive\" src=\"img/" + this.img + ".png\" alt=\"\" />"
+                                        
+                    + "</div>"
+                    + "</div>"
+                    + "<div class=\"col-md-9 col-sm-6\">"
+                    + "<h3><strong>About Me:</strong></h3>"
+                    + "<p id=profileBio><strong>" +this.user_bio+"</strong></p>"
+                    + "</div>"
+                   
+                    
+                    + "<div class=\"col-md-3\" style=\"text-align: center\">"
+                    + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Native Language</strong></h4>"
+                    + "<div class=\"progress-bar-linear\">"
+                    + "<p><strong>" + this.native_language + "</strong></p>"
+                    + "<div class=\"progress-bar\">"
+                    + "<span data-percent=\"100\"></span>"
+                    + "</div>"
+                    + "</div>"
+                    + "</div>"
+                    + "<div class=\"col-md-3\" style=\"text-align: center\">"
+                    + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Learning Language</strong></h4>"
+                    + "<div class=\"progress-bar-linear\">"
+                    + "<p><strong>" + this.learning_language + "</strong></p>"
+                    + "<div class=\"progress-bar\">"
+                    + "<span data-percent=\"100\"></span>"
+                    + "</div>"
+                    + "</div>"
+                    + "</div>"
+                    + "<div class=\"col-md-3\" style=\"text-align: center\">"
+                    + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Location</strong></h4>"
+                    + "<div class=\"progress-bar-linear\">"
+                    + "<p id=\"userlangandloc\" class=\"progress-bar-text\"><strong>" 
+                    + this.user_city + ", " + this.user_state + "</strong></p>"
+                    + "<div class=\"progress-bar\">"
+                    + "<span data-percent=\"100\"></span>"
+                    
+                    + "</div>"
+                    + "</div>"
+                    + "</div>"
+                    
+                    + "<div class=\"col-md-3\"></div>"
+                    + "<div class=\"col-md-4\">"
+                    + "<button id=\"sendEmailButton\" class=\"btn btn-info btn-lg\" style=\"display: block; margin: 0 auto;\">"
+                    + "<a href=\"\sendmessage.html\"></a>"
+                    + "<span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span>"
+                    + " Send " + this.name + " a message!!</button>"
+                    + "</div>"
+                    + "<div class=\"col-md-1\"></div>"
+                    + "<div class=\"col-md-4\">"
+                    + "<button id=\"getRestaurantButton\" class=\"btn btn-info btn-lg\" style=\"display: block; margin: 0 auto;\">"
+                    + "<span class=\"glyphicon glyphicon-globe\" aria-hidden=\"true\"></span>"
+                    + " Find a " + this.learning_language + " Restaurant Near You!!</button>"
+                    + "</div>"
+                    + "</div>"
+                    + "</div>"
+                    + "</div>"
+                    
+                    
+
+                    )                            
+                    
+
+            $('#messageBackground').addClass(this.country);
+                
+         });
+=======
      ];*/
 	$("#emailButton").click(function(){
 		alert("Your message has been sent!")
@@ -314,5 +393,6 @@ $(function() {
 		});
 	});
          
+>>>>>>> 3c5548633f6a460a20522808efae180e74f16878
          
 });

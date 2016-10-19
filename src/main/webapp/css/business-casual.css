@@ -403,6 +403,15 @@ span.socialSpace {
 }
 
 #messagePic {
+<<<<<<< HEAD
+        
+    height: 125px;
+    width: 125px;
+	align: center-block;
+    
+    border-image: 20px;
+      }
+=======
 	height: 165px;
 	width: 165px;
 	display: flex;
@@ -410,6 +419,7 @@ span.socialSpace {
 	justify-content: center;
 	border-image: 20px;
 }
+>>>>>>> c8d2eada8705b1a1f08caecda1ea9ae34bd39ec1
 
 #profileBio {
 	margin-top: 20px;
@@ -439,6 +449,29 @@ span.socialSpace {
 }
 
 #indUserMatch {
+<<<<<<< HEAD
+  
+  	height: 315px;
+    padding-bottom: 15px;
+    
+}
+
+#sendEmailButton{
+	
+	margin: 0 auto;
+	padding-bottom: 5px;
+}
+#getRestaurantButton{
+	
+	margin: 0 auto;
+	padding-bottom: 5px;
+	
+}
+
+.userProfile{
+	
+	height: 375px;
+=======
 	padding-bottom: 15px;
 }
 
@@ -448,4 +481,5 @@ span.socialSpace {
 
 #getRestaurantButton {
 	float: right;
+>>>>>>> c8d2eada8705b1a1f08caecda1ea9ae34bd39ec1
 }
