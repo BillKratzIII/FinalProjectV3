@@ -74,7 +74,7 @@
                 	    
       <div class="form-group">
           <label for="name">Name</label>
-            <input type="input" class="form-control" name="name" id="name" placeholder="Name">
+            <input type="text" class="form-control" name="name" id="name" placeholder="Name">
       </div>
       <div class="form-group">
           <label for="email">Email Address</label>
@@ -100,26 +100,26 @@
                 	    <h3 class="fs-subtitle">Personal Information</h3>
           <div class="form-group">
         <label for="streetAddress">Street Address</label>
-            <input type="input" class="form-control" name="streetAddress" id="streetAddress" placeholder="Street Address">
+            <input type="text" class="form-control" name="streetAddress" id="streetAddress" placeholder="Street Address">
 
         </div>
        <div class="form-group">
         <label for="city">City</label>
-            <input type="input" class="form-control" name="city" id="city" placeholder="City">
+            <input type="text" class="form-control" name="city" id="city" placeholder="City">
         </div>
         <div class="form-group">
           <label for="state">State</label>
-            <input type="input" class="form-control" name="state" id="state" placeholder="State">
+            <input type="text" class="form-control" name="state" id="state" placeholder="State">
         </div>
         <div class="form-group">
           <label for="zip">Zip Code</label>
-            <input type="input" class="form-control" name="zip" id="zip" placeholder="Zip Code">
+            <input type="text" class="form-control" name="zip" id="zip" placeholder="Zip Code">
         </div>
         <br/>
          <div class="dropdown">
       	<label for="ageRangeId">Age Range</label>
 				<select class="form-control" name="ageRangeId" id="ageRangeId">
-					<option value="">18-22</option>
+					<option value="">Age Range</option>
 					<option value="1">18-22</option>
 					<option value="2">23-30</option>
 					<option value="3">31-40</option>
@@ -411,6 +411,9 @@
     <script src= "https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src= "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+       	
+   	<script src="js/formValidation.js"></script>
     <script src="js/form.js"></script>
     
     <!-- Bootstrap Core JavaScript -->
