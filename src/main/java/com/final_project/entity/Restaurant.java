@@ -47,6 +47,12 @@ public class Restaurant implements Serializable{
 	@Column(name="password")
 	private String password;
 	
+	@Column(name="lat")
+	private String lat;
+	
+	@Column(name="lng")
+	private String lng;
+	
 	
 	/*getters and setters below- */
 
@@ -121,5 +127,23 @@ public class Restaurant implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getLat() {
+		return lat;
+	}
+
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+
+	public String getLng() {
+		return lng;
+	}
+
+	public void setLng(String lng) {
+		this.lng = lng;
+	}
+	
+	
 	
 }//class

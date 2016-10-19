@@ -96,7 +96,7 @@
  					</div>
  					<div class="form-group">
    						<label for="restaurant_password">Confirm Password</label>
-   						<input type="password" class="form-control" id="restaurant_password" placeholder="Confirm Password">
+   						<input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
  					</div>
  
  			<div class="dropdown">
@@ -148,27 +148,6 @@
          </div>
     </footer>
 
-    <div id="dialog1" title="Log In">
-        
-            <form id="loginForm" method="post">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-             </div>
-  
-            <button class="btn btn-default" id="loginButton">Submit</button>
-            <span style="color:red;" th:text="${session.loginMessage}">
-        </form>
-
-    </div>
-
-
-  
-
  
   
     <!-- jQuery -->
@@ -185,30 +164,53 @@
     
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery_popup.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb-8rUIYnfQ7Rg15sWA0eYMtfarAa-wvQ"></script>
     
     
     <script>
     $(function(){
-    	$("#loginButton").click(function(event){
-    		event.preventDefault();
-    		$.post("/login", $("#loginForm").serialize(), function(data){
-    			location.href = "/profile";
-    		}).error(function(){
-    			alert("Email or Password do not match");
-    			
-    		})
-    	});
+    	
     	
     	$("#restaurantSubmit").click(function(event){
     		event.preventDefault();
-    		$.post("/restaurant", $("#createRestaurantForm").serialize(), function(data){
-    			console.log("Success")
-    			location.href = "/participatingrestaurants";
-    		}).error(function(){
-    			console.log("Failure");
-    			
-    		})
+    		var address = $("#streetAddress").val() + " " + $("#city").val() + ", " + $("#state").val();
+    		console.log(address);
+    		geoCodeAddress(address);
     	});
+    		
+    	function geoCodeAddress(address){
+    		var lat;
+    		var lng;
+    		var geocoder = new google.maps.Geocoder();
+    			
+    			geocoder.geocode( { 'address': address}, function(results, status) {
+    		      if (status == 'OK') {
+    		    	  lat = results[0].geometry.location.lat();
+    		    	  lng = results[0].geometry.location.lng();
+    		    	  console.log(lat);
+    		    	  console.log(lng);
+    		    	  
+    		    	  console.log(lat + ", " + lng);
+    		    		$("#lat").val(lat);
+    		    		$('#lng').val(lng)	
+    		
+    		
+    					$.post("/restaurant", $("#createRestaurantForm").serialize(), function(data){
+    					console.log("Success")
+    					location.href = "/participatingrestaurants";
+    					}).error(function(){
+    					console.log("Failure");
+    			
+    					})
+    		      } else {
+      		        console.log('Geocode was not successful for the following reason: ' + status);
+      		      }
+      			})
+      			
+    	}
+    	
+    	
+    	
     	
     });
     
