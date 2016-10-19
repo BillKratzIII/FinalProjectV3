@@ -1,10 +1,17 @@
+function showForm(i) {
+		console.log("inside showForm");
+	    $("#dialog1").dialog();
+	    $("#address").val($("#email" + i).val());
+	};
+
+
+
 $(function() {
 	$(".userMatches").hide();
 	
 	$.get("/session", function(data){
 		console.log(data);
 		user=data;
-		
 		
 		
 		$('.userProfile').append("<div class=\"container\" id=\""+user.learningLanguage+"\">"
@@ -47,9 +54,10 @@ $(function() {
                 
                 + "<div class=\"col-md-9\" style=\"text-align: center\">"
                 + "<button id=\"findMatchButton\" class=\"btn btn-info btn-lg\" role=\"alert\">"
-                + "Find a New Language Partner!!</button>"
-                
+                + "Find a New Language Partner!!</button>"             
                 + "</div>"
+                
+                
                 + "</div>"
                 + "</div>"
                 + "</div>"
@@ -63,8 +71,10 @@ $(function() {
     		$.get("/usermatches", function(data){
     			console.log(data);
     			users=data;   
-    	   
+    			var counter = 0;
+    			
     			$.each(users, function(){
+    				
     		        $('.userMatches').append("<div id=\"indUserMatch\">"
 
     		                    +"<div class=\"container\" id=\""+this.learningLanguage+"\">"
@@ -106,8 +116,7 @@ $(function() {
     		                    + "</div>"
     		                    
     		                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
-    		                    + "<button id=\"sendEmailButton\" class=\"btn btn-info btn-lg\" role=\"alert\">"
-    		                    + "<a href=\"\sendmessage.html\"></a>"
+    		                    + "<button id=\"sendEmailButton\" onclick=\"showForm(" + counter + ")\" class=\"btn btn-info btn-lg\" role=\"alert\">"
     		                    + "<span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span>"
     		                    + " Send " + this.name + " a message!!</button>"
     		                    + "</div>"
@@ -117,6 +126,12 @@ $(function() {
     		                    + " Find a " + this.learningLanguage + " Restaurant Near You!!</button>"
     		                    + "</div>"
     		                    + "</div>"
+    		                    
+    		                    + "<div class=\"col-md-9\" style=\"text-align: center\">"
+    		                    + "<input type=\"hidden\" id=\"email" + counter + "\" value=\"" + this.email + "\">"     
+    		                    + "</div>"
+    		                    
+    		                    
     		                    + "</div>"
     		                    + "</div>"
     		                    
@@ -125,6 +140,8 @@ $(function() {
     		                    
 
     		            $('#messageBackground').addClass(this.learningLanguage);  
+    		        	counter++;
+    		        	return counter<5;
     		         });
     			
     			
@@ -246,7 +263,28 @@ $(function() {
     
      }
      ];*/
-
+	$("#emailButton").click(function(){
+		alert("Your message has been sent!")
+		console.log("inside submit button");
+		$.ajax({
+			url: "/send-mail",
+			type:"POST",
+			data:JSON.stringify({
+				"address" : $("#address").val(),
+				"subject" : $("#subject").val(),
+				"message" : $("#message").val()
+			}),
+			contentType:"application/json; charset=utf-8",
+			dataType:"json",
+			complete: function(){
+				console.log("Email Sent?");
+				location.href = "/profile.html";
+			},
+			error: function(){
+				console.log("error");
+			}
+		});
+	});
          
          
 });
