@@ -28,6 +28,8 @@ public class WholeUser{
 	private String firstLanguage = null;
 	private String learningLanguage = null;
 	private String skillLevel = null;
+	private String lat = null;
+	private String lng = null;
 	
 	/*getters and setters below- */
 	public int getUserId() {
@@ -261,6 +263,23 @@ public class WholeUser{
 		this.avitar = avitar;
 	}
 	
+	
+	public String getLat() {
+		return lat;
+	}
+
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+
+	public String getLng() {
+		return lng;
+	}
+
+	public void setLng(String lng) {
+		this.lng = lng;
+	}
+
 	public static WholeUser makeWholeUser(User user){
 		WholeUser newUser = new WholeUser();
 		newUser.setUserId(user.getUserId());
@@ -282,6 +301,8 @@ public class WholeUser{
 		newUser.setLearningLanguage(user.getLearningLanguageId());
 		newUser.setSkillLevel(user.getSkillLevelId());
 		newUser.setAvitar(user.getAvitar());
+		newUser.setLat(user.getLat());
+		newUser.setLng(user.getLng());
 		return newUser;
 	}
 	

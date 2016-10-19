@@ -51,12 +51,6 @@ public class WebsiteController {
         return mv;
     }
 	
-	@RequestMapping("/matchlist")
-    public ModelAndView matchlist(HttpSession sessionObj, ModelAndView mv)
-    {
-        return mv;
-    }
-	
 	@RequestMapping("/createuser")
 	public ModelAndView createuser(HttpSession sessionObj, ModelAndView mv){
 		return mv;

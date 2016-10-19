@@ -3,6 +3,10 @@ function showForm(i) {
 	    $("#dialog1").dialog();
 	    $("#address").val($("#email" + i).val());
 	};
+	
+function findRestaurant(){
+	location.href = "/participatingrestaurants";
+};
 
 
 
@@ -37,7 +41,7 @@ $(function() {
                 + "<div class=\"col-md-3\" style=\"text-align: center\">"
                 + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Native Language</strong></h4>"
                 + "<div class=\"progress-bar-linear\">"
-                + "<p><strong>" + user.nativeLanguage + "</strong></p>"
+                + "<p><strong>" + user.firstLanguage + "</strong></p>"
                 + "<div class=\"progress-bar\">"
                 + "<span data-percent=\"100\"></span>"
                 + "</div>"
@@ -135,7 +139,7 @@ $(function() {
     		                    + " Send " + this.name + " a message!!</button>"
     		                    + "</div>"
     		                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
-    		                    + "<button id=\"sendEmailButton\" class=\"btn btn-info btn-lg\" role=\"alert\">"
+    		                    + "<button id=\"findRestaurantButton\" onclick=\"findRestaurant()\" class=\"btn btn-info btn-lg\" role=\"alert\">"
     		                    + "<span class=\"glyphicon glyphicon-globe\" aria-hidden=\"true\"></span>"
     		                    + " Find a " + this.learningLanguage + " Restaurant Near You!!</button>"
     		                    + "</div>"
