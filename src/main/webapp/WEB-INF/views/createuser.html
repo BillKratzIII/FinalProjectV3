@@ -19,7 +19,7 @@
     
     
     
-    <link href="css/dialog.css" rel="stylesheet"> 
+    
   
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
    
@@ -62,12 +62,16 @@
 
     <div class="container">
 
-            <div class="row">
-              <div class="box">
-                <div class="col-lg-12 text-center">
+      <div class="row">
+         <div class="box">
+            <div class="col-lg-12 text-center">
               <form id="createUserForm"> 
-            <div class="well well-lg"> 
-            <h3 class="fs-subtitle">Step 1</h3>
+      		      <div class="well well-lg"> 
+        		    <h3 class="fs-title">Create User</h3>
+                	    <h3 class="fs-subtitle">Step 1 of 4</h3>
+                	    <h3 class="fs-subtitle">Login Information</h3>
+                	    
+                	    
       <div class="form-group">
           <label for="name">Name</label>
             <input type="text" class="form-control" name="name" id="name" placeholder="Name">
@@ -86,9 +90,14 @@
       
       </div>
       </div>
+      
+      <br/>
+      <br/>
 
              <div class="well well-lg"> 
-            <h3 class="fs-subtitle">Step 2</h3>
+            <h3 class="fs-title">Create User</h3>
+                	    <h3 class="fs-subtitle">Step 2 of 4</h3>
+                	    <h3 class="fs-subtitle">Personal Information</h3>
           <div class="form-group">
         <label for="streetAddress">Street Address</label>
             <input type="text" class="form-control" name="streetAddress" id="streetAddress" placeholder="Street Address">
@@ -106,7 +115,7 @@
           <label for="zip">Zip Code</label>
             <input type="text" class="form-control" name="zip" id="zip" placeholder="Zip Code">
         </div>
-        
+        <br/>
          <div class="dropdown">
       	<label for="ageRangeId">Age Range</label>
 				<select class="form-control" name="ageRangeId" id="ageRangeId">
@@ -118,6 +127,7 @@
 					<option value="6">65+</option>
 				</select>
 		</div>
+		<br/>
 		<div class="dropdown">
 			<label for="gender">Gender</label>
 				<select class="form-control" name="gender" id="gender">
@@ -125,7 +135,7 @@
 					<option value="Male">Male</option>
 				</select>
 		</div>
-        
+        <br/>
         <div class="dropdown">
             <label for="firstLanguageId">First Language</label>
                 <select class="form-control" name="firstLanguageId" id="firstLanguageId">
@@ -137,6 +147,7 @@
                     <option value="6">Japanese</option>
                 </select>
         </div>
+        <br/>
         <div class="dropdown">
             <label for="learningLanguageId">Learning Language</label>
                 <select class="form-control" name="learningLanguageId" id="learningLanguageId">
@@ -150,9 +161,15 @@
             </div>
         </div>
 
+		<br/>
+        <br/>
 
-
-         <div class="well well-lg"> 
+         <div class="well well-lg">
+         
+         <h3 class="fs-title">Create User</h3>
+            <h3 class="fs-subtitle">Step 3 of 4</h3> 
+            
+            <br/>
             <h3 class="fs-subtitle">Choose Your Ability Level</h3>
         
          
@@ -165,7 +182,9 @@
                         <option value="3">Advanced</option>
                     </select>
             </div>
+            <br/>
             <div class="form-group">
+            	<h3 class="fs-subtitle">Tell Other Language Learners About Yourself</h3>
                     <label for="aboutMe">About Me:</label>
                     <textarea class="form-control" rows="5" name="aboutMe" id="aboutMe"
                         placeholder="optional"></textarea>
@@ -174,21 +193,20 @@
         </div>
 
 
-
+		<br/>
+      	<br/>
 
 
     <div class="well well-lg">
         <div class="row" >
-              <div class="box">
+              
                 <div class="col-lg-12 text-center">
                 
                     <h3 class="fs-title">Create User</h3>
-                    <h3 class="fs-subtitle">Select an Avatar</h3>
+                    <h3 class="fs-subtitle">Step 4 of 4</h3>
                 <div class="row">
                 <div class="col-lg-12" >
-                    <h1 class="page-header">Select an Avatar
-                        <small>for your profile!</small>
-                    </h1>
+                    <h3 class="fs-subtitle">Choose An Avatar For Your Profile</h3>
                 </div>
                 </div>
         <!-- /.row -->
@@ -196,29 +214,38 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-3 portfolio-item">
+                <div class="well well-sm">
                 
-                <input type="radio" name="avitar" value="fish">
-                    <img height="150px" width="150px" class="img-responsive" src="img/fish.png" alt="">
+                    <img height="150px" width="150px" class="center-block img-responsive" src="img/fish.png" alt="">
                     <h3>Fish</h3>
+                    <input type="radio" name="avitar" value="fish">
+                </div>
             </div>
             <div class="col-md-3 portfolio-item">
+                <div class="well well-sm">
                 
-                <input type="radio" name="avitar" value="cat">
-                    <img height="150px" width="150px" class="img-responsive" src="img/cat.png" alt="">
+                    <img height="150px" width="150px" class="center-block img-responsive" src="img/cat.png" alt="">
                     <h3>Cat</h3>
+                    <input type="radio" name="avitar" value="cat">
+            	</div>
             </div>
             
             <div class="col-md-3 portfolio-item">
+                <div class="well well-sm">
                 
-                <input type="radio" name="avitar" value="whale">
-                    <img height="150px" width="150px" class="img-responsive" src="img/whale.png" alt="">
-                    <h3>whale</h3>
+                    <img height="150px" width="150px" class="center-block img-responsive" src="img/whale.png" alt="">
+                    <h3>Whale</h3>
+                    <input type="radio" name="avitar" value="whale">
+                    
+                </div>
             </div>
             <div class="col-md-3 portfolio-item">
+                <div class="well well-sm">
                 
-                <input type="radio" name="avitar" value="shark">
-                    <img height="150px" width="150px" class="img-responsive" src="img/shark.png" alt="">
+                    <img height="150px" width="150px" class="center-block img-responsive" src="img/shark.png" alt="">
                     <h3>Shark</h3>
+                    <input type="radio" name="avitar" value="shark">
+               </div>
             </div>
         </div>
         <!-- /.row -->
@@ -226,58 +253,75 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-3 portfolio-item">
+                <div class="well well-sm">
+                	
+                    	<img height="150px" width="150px" class="center-block img-responsive" src="img/bird.png" alt="">
+                    	<h3>Bird</h3>
+                 		<input type="radio" name="avitar" value="bird">
+                </div>
                 
-                <input type="radio" name="avitar" value="bird">
-                    <img height="150px" width="150px" class="img-responsive" src="img/bird.png" alt="">
-                    <h3>Bird</h3>
             </div>
             <div class="col-md-3 portfolio-item">
+                <div class="well well-sm">
                 
-                <input type="radio" name="avitar" value="pony">
-                    <img height="150px" width="150px" class="img-responsive" src="img/pony.png" alt="">
+                    <img height="150px" width="150px" class="center-block img-responsive" src="img/pony.png" alt="">
                     <h3>Pony</h3>
+                    <input type="radio" name="avitar" value="pony">
+                </div>
             </div>
             
             <div class="col-md-3 portfolio-item">
+                <div class="well well-sm">
                 
-                <input type="radio" name="avitar" value="cow">
-                    <img height="150px" width="150px" class="img-responsive" src="img/cow.png" alt="">
+                    <img height="150px" width="150px" class="center-block img-responsive" src="img/cow.png" alt="">
                     <h3>Cow</h3>
+                    <input type="radio" name="avitar" value="cow">
+                </div>
             </div>
             <div class="col-md-3 portfolio-item">
+                <div class="well well-sm">
                 
-                <input type="radio" name="avitar" value="duck">
-                    <img height="150px" width="150px" class="img-responsive" src="img/duck.png" alt="">
+                    <img height="150px" width="150px" class="center-block img-responsive" src="img/duck.png" alt="">
                     <h3>Duck</h3>
+                    <input type="radio" name="avitar" value="duck">
+                </div>
             </div>
         </div>
 
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-3 portfolio-item">
+                <div class="well well-sm">
                 
-                <input type="radio" name="avitar" value="bunny">
-                    <img height="150px" width="150px" class="img-responsive" src="img/bunny.png" alt="">
+                    <img height="150px" width="150px" class="center-block img-responsive" src="img/bunny.png" alt="">
                     <h3>Bunny</h3>
+                    <input type="radio" name="avitar" value="bunny">
+                </div>
             </div>
             <div class="col-md-3 portfolio-item">
+                <div class="well well-sm">
                 
-                <input type="radio" name="avitar" value="dog">
-                    <img height="150px" width="150px" class="img-responsive" src="img/dog.png" alt="">
+                    <img height="150px" width="150px" class="center-block img-responsive" src="img/dog.png" alt="">
                     <h3>Dog</h3>
+                    <input type="radio" name="avitar" value="dog">
+                </div>
             </div>
             
             <div class="col-md-3 portfolio-item">
+                <div class="well well-sm">
                 
-                <input type="radio" name="avitar" value="turtle">
-                    <img height="150px" width="150px" class="img-responsive" src="img/turtle.png" alt="">
+                    <img height="150px" width="150px" class="center-block img-responsive" src="img/turtle.png" alt="">
                     <h3>Turtle</h3>
+                    <input type="radio" name="avitar" value="turtle">
+                </div>
             </div>
             <div class="col-md-3 portfolio-item">
+                <div class="well well-sm">
                 
-                <input type="radio" name="avitar" value="bluebird">
-                    <img height="150px" width="150px" class="img-responsive" src="img/bluebird.png" alt="">
+                    <img height="150px" width="150px" class="center-block img-responsive" src="img/bluebird.png" alt="">
                     <h3>Bluebird</h3>
+                    <input type="radio" name="avitar" value="bluebird">
+                </div>
             </div>
         </div>
 
@@ -287,19 +331,20 @@
                 </div>
 
             </div>
-            <button class="btn btn-default" id="createUserButton">Submit</button> 
+             
             
         </div>
+        <button class="btn btn-default btn-lg" id="createUserButton">Submit New User</button>
         </div> <!--well-->
            
     </form>
         
             
 
-        </div><!--ends box-->
-    </div><!--row-->
-</div><!--container-->
-    
+        	</div><!--ends col-->
+   
+		</div> <!--row-->
+   </div> <!--container-->
 
 
 <br/>
@@ -364,7 +409,7 @@
     <!-- Bootstrap Core JavaScript -->
     
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery_popup.js"></script>
+    
     
     
     <script>

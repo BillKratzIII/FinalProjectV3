@@ -382,12 +382,10 @@ footer p {
 
 #messagePic {
         
-    height: 165px;
-    width: 165px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 125px;
+    width: 125px;
+	align: center-block;
+    
     border-image: 20px;
       }
 
@@ -431,13 +429,22 @@ footer p {
 #indUserMatch {
   
     padding-bottom: 15px;
+    
 }
 
 #sendEmailButton{
 	
-	float: right;
+	margin: 0 auto;
+	padding-bottom: 5px;
 }
 #getRestaurantButton{
 	
-	float: right;
+	margin: 0 auto;
+	padding-bottom: 5px;
+	
+}
+
+.userProfile{
+	
+	height: 375px;
 }
