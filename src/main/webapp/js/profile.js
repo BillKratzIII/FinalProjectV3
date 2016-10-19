@@ -130,12 +130,12 @@ $(function() {
     		                    + "</div>"
     		                    
     		                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
-    		                    + "<button id=\"sendEmailButton\" onclick=\"showForm(" + counter + ")\" class=\"btn btn-info btn-lg\" role=\"alert\">"
+    		                    + "<button id=\"sendEmailButton\" onclick=\"showForm(" + counter + ")\" class=\"btn btn-info btn-lg\" style=\"display: block; margin: 0 auto;\" role=\"alert\">"
     		                    + "<span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span>"
     		                    + " Send " + this.name + " a message!!</button>"
     		                    + "</div>"
     		                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
-    		                    + "<button id=\"sendEmailButton\" class=\"btn btn-info btn-lg\" role=\"alert\">"
+    		                    + "<button id=\"sendEmailButton\" class=\"btn btn-info btn-lg\" style=\"display: block; margin: 0 auto;\" role=\"alert\">"
     		                    + "<span class=\"glyphicon glyphicon-globe\" aria-hidden=\"true\"></span>"
     		                    + " Find a " + this.learningLanguage + " Restaurant Near You!!</button>"
     		                    + "</div>"
@@ -229,10 +229,9 @@ $(function() {
      {
         name: 'Beth',
         learning_language: 'Spanish',
-<<<<<<< HEAD
-=======
+
         native_language: 'English',
->>>>>>> 1cdb4c4bb960e2778fd1b081484a2c35d9ab87c9
+
         country: 'Spanish',
         email: 'dangelo0011@gmail.com',
         learning_language_id: '1',
@@ -246,10 +245,9 @@ $(function() {
     
          name: 'Bill',
          learning_language: 'Italian',
-<<<<<<< HEAD
-=======
+
          native_language: 'French',
->>>>>>> 1cdb4c4bb960e2778fd1b081484a2c35d9ab87c9
+
          country: 'Italian',
          email: 'dangelo0011@gmail.com',
          learning_language_id: '2',
@@ -263,10 +261,9 @@ $(function() {
      {
          name: 'Forest',
          learning_language: 'French',
-<<<<<<< HEAD
-=======
+
          native_language: 'Italian',
->>>>>>> 1cdb4c4bb960e2778fd1b081484a2c35d9ab87c9
+
          country: 'French',
          email: 'dangelo0011@gmail.com',
          learning_language_id: '3',
@@ -290,7 +287,7 @@ $(function() {
          user_bio: 'is simply dummy text of the printing and typesetting industry. Software like Aldus PageMaker including versions of Lorem Ipsum'
     
      }
-<<<<<<< HEAD
+
      ];
 
          $.each(users, function(){
@@ -368,7 +365,7 @@ $(function() {
             $('#messageBackground').addClass(this.country);
                 
          });
-=======
+
      ];*/
 	$("#emailButton").click(function(){
 		alert("Your message has been sent!")
@@ -393,6 +390,6 @@ $(function() {
 		});
 	});
          
->>>>>>> 3c5548633f6a460a20522808efae180e74f16878
+
          
 });
