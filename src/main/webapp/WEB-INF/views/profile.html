@@ -14,17 +14,13 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- SITE TITLE -->
     <title>Convo Cafe | Profile</title>            
-        <!-- Latest Bootstrap min CSS -->
-         <!-- Bootstrap Core CSS -->
+      
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/jquery_popup.css" />
-
-      
-    <!-- <link href="css/dialog.css" rel="stylesheet"> -->
-        <!-- Google Font -->
+          
+    
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
   
    
@@ -37,7 +33,7 @@
 <div class="divBackgroundImage" style="background-image: url(img/worldmap.jpg);">
 </div>
     <nav class="navbar navbar-default">
-  <div class="container-fluid">
+  		<div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <a class="navbar-brand" href="/"><img src="img/logo1.png" width = 75px heigth = 75px class="img-circle"/></a>
 
@@ -52,7 +48,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Options<span class="caret"></span></a>
           <ul class="dropdown-menu">
           	<li><a href="/logout">Logout</a>
-            <li><a id="popupUU">Update Profile</a></li>
+            <li><a href="/createuser">Update Profile</a></li>
             <li><a id="popupDU">Delete Profile</a></li>
             <li><a id="popupAL">Ability Level Descriptions</a></li>
           </ul>
@@ -67,49 +63,79 @@
 
  <div class="container">
  	<section class="main-section">
+ 	
+ 	<br/>
+ 	<br/>
+ 	<br/>
+ 	<br/>
 
 		<div class="userProfile">
 
-		<div class="userMatches">
+<<<<<<< HEAD
+			
+			<div class="userMatches">
+
 
 
 
 
 			</div>
+=======
+		<div class="userMatches">
+		</div>
+>>>>>>> forrest
 		</div>
  	</section>
  </div>      
                   
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-    <footer>
-        <div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; CC 2016</p>
-                </div>
-                <div style="text-align:center">
+  
+  
+  <div id="container">
+  
+   
+   <div id="footer">
+   		<div class="row">
+             <div class="col-lg-12 text-center">
+                  <p>Copyright &copy; CC 2016</p>
+              </div>
+              <div style="text-align:center">
                 <a target="_blank" title="follow me on Twitter" href="http://www.twitter.com/ConvoCafeMD"><img alt="follow me on Twitter" src="https://c866088.ssl.cf3.rackcdn.com/assets/twitter30x30.png" border=0></a>
                               
                 <a target="_blank" title="follow me on facebook" href="http://www.facebook.com/ConvoCafe"><img alt="follow me on facebook" src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png" border=0></a>
                                
                 <a target="_blank" title="follow me on instagram" href="http://www.instagram.com/ConvoCafe"><img alt="follow me on instagram" src="https://c866088.ssl.cf3.rackcdn.com/assets/instagram30x30.png" border=0></a>
                 <a target="_blank" title="follow me on google plus" href="https://plus.google.com/u/0/100850869893908489916"><img alt="follow me on google plus" src="https://c866088.ssl.cf3.rackcdn.com/assets/googleplus30x30.png" border=0></a>
+<<<<<<< HEAD
                 </div>
             </div> 
          </div>
     </footer>
+    
+    <div id="dialog1" title="Email">
 
+		<form id="emailForm">
+			<div class="form-group">
+			<input type="hidden" class="form-control" id="address"><br>
+			</div>
+			<div class="form-group">
+				<label>Subject:</label><br>
+				<input type="text" class="form-control" id="subject"><br>
+			</div>
+			<div class="form-group">
+				<label>Message:</label><br>
+				<textarea id="message" class="form-control" rows="5"></textarea><br>
+			</div>
+		</form>
+		<button class="btn btn-default" id="emailButton">Submit</button>
+	</div>
+
+=======
+              </div>
+           </div>
+    </div>
+</div>
+ 
+>>>>>>> forrest
 <div id="dialog3" title="Delete User">
   <form>
     <h2>Delete User</h2>
@@ -237,46 +263,20 @@
 </div>
 
     <!-- jQuery -->
+    
     <script src="js/jquery.js"></script>
     <script src= "https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src= "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript"></script>
     <script src="js/profile.js"></script>
     <script src="js/form.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     
-    <script>
-   /*  $(document).ready(function(){
-    	console.log("testing js");
-    	$("#sendEmailButton").click(function(){
-    		console.log("inside submit button");
-    		$.ajax({
-    			url: "/send-mail",
-    			type:"POST",
-    			data:JSON.stringify({
-    				"address" : $("#address").val(),
-    				"subject" : $("#subject").val(),
-    				"message" : $("#message").val()
-    			}),
-    			contentType:"application/json; charset=utf-8",
-    			dataType:"json",
-    			complete: function(){
-    				console.log("Email Sent?");
-    				location.href = "/profile.html";
-    			},
-    			error: function(){
-    				console.log("error");
-    			}
-    		});
-    	});
-    });
-     */
-    </script>
-
+<<<<<<< HEAD
+=======
     
     
-    
-
+>>>>>>> forrest
 
 </body>
 

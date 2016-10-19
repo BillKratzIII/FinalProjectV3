@@ -1,5 +1,6 @@
   package com.final_project.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.final_project.entity.User;
+import com.final_project.entity.WholeUser;
 import com.final_project.service.UserService;
 
 @Controller
@@ -31,10 +33,28 @@ public class UserController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 	
+	
 	@RequestMapping(value= "/user", method = RequestMethod.GET)
 	public ResponseEntity<List<User>> getAllUsers() {
 		List<User> users = userService.getAllUsers();
 		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value= "/usermatches", method = RequestMethod.GET)
+	public ResponseEntity<ArrayList<WholeUser>> getUserMatches(HttpSession sessionObj) {
+		List<User> users = userService.getAllUsers();
+		ArrayList<WholeUser> wholeUsers = new ArrayList<WholeUser>();
+		WholeUser userLoggedIn = (WholeUser) sessionObj.getAttribute("user");
+		
+		
+		for (User user : users) {
+			
+			if (user.getFirstLanguageId().equalsIgnoreCase(userLoggedIn.getFirstLanguageId()) && user.getLearningLanguageId().equalsIgnoreCase(userLoggedIn.getLearningLanguageId())){
+				wholeUsers.add(WholeUser.makeWholeUser(user));
+			}
+		}
+		
+		return new ResponseEntity<ArrayList<WholeUser>>(wholeUsers, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value= "/user", method = RequestMethod.POST)
@@ -47,7 +67,8 @@ public class UserController {
         }
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(builder.path("/user/{id}").buildAndExpand(user.getUserId()).toUri());
-        sessionObj.setAttribute("user", user);
+        WholeUser w = WholeUser.makeWholeUser(user);
+        sessionObj.setAttribute("user", w);
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	}
 	

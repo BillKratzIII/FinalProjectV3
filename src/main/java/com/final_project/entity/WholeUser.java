@@ -75,6 +75,9 @@ public class WholeUser{
 		case 6:
 			this.ageRange = "65+";
 			break;
+		default:
+			this.ageRange = "null";
+			break;
 		}
 	}
 	
@@ -178,6 +181,9 @@ public class WholeUser{
 		case "6":
 			this.firstLanguage = "Japanese";
 			break;
+		default:
+			this.firstLanguage = "null";
+			break;
 		}
 	}
 
@@ -213,6 +219,8 @@ public class WholeUser{
 		case "6":
 			this.learningLanguage = "Japanese";
 			break;
+		default:
+			this.learningLanguage = "null";
 		}
 	}
 
@@ -238,6 +246,9 @@ public class WholeUser{
 			break;
 		case "3":
 			this.skillLevel = "Advanced";
+			break;
+		default:
+			this.skillLevel = "null";
 			break;
 		}
 	}
@@ -270,6 +281,7 @@ public class WholeUser{
 		newUser.setFirstLanguage(user.getFirstLanguageId());
 		newUser.setLearningLanguage(user.getLearningLanguageId());
 		newUser.setSkillLevel(user.getSkillLevelId());
+		newUser.setAvitar(user.getAvitar());
 		return newUser;
 	}
 	
