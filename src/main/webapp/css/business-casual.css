@@ -227,9 +227,29 @@ footer p {
     background: linear-gradient(to right, pink, #ffff94, pink); /* Standard syntax (must be last) */
 }
 
+
 #null {
 	height: 100%;
 	background-color:white;
+}
+
+#English {
+    height: 100%;
+    background: linear-gradient(to right, pink, white, white, lightblue); /* Standard syntax (must be last) */
+}
+
+
+#Japanese {
+
+    height: 100%;
+    background: linear-gradient(to right, white, white, pink, white, white); /* Standard syntax (must be last) */
+}
+
+#German {
+
+    height: 100%;
+    background: linear-gradient(to right, #505050, pink, #ffff80); /* Standard syntax (must be last) */
+
 }
 
 #msform {
@@ -347,8 +367,8 @@ footer p {
 
 #map {
         
-        height: 250px;
-        width: 250px;
+        height: 350px;
+        width: 100%;
       }
 
 #profileName {
@@ -385,23 +405,7 @@ footer p {
     
       }
 
-#profileLanguage {
-        
-        height: 350px;
-        width: 100%;
-      }
 
-#profileLocation {
-        
-        height: 350px;
-        width: 100%;
-      }
-
-#profileButton {
-        
-        height: 350px;
-        width: 100%;
-      }
 #messageName{
 
     text-align: center;
@@ -434,4 +438,13 @@ footer p {
 #indUserMatch {
   
     padding-bottom: 15px;
+}
+
+#sendEmailButton{
+	
+	float: right;
+}
+#getRestaurantButton{
+	
+	float: right;
 }

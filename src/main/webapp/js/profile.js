@@ -9,6 +9,9 @@ function showForm(i) {
 $(function() {
 	$(".userMatches").hide();
 	
+	var user;
+
+	
 	$.get("/session", function(data){
 		console.log(data);
 		user=data;
@@ -31,8 +34,18 @@ $(function() {
                 + "<p id=profileBio><strong>" +user.aboutMe +"</strong></p>"
                 + "</div>"
                 
-                + "<div class=\"col-md-4\" style=\"text-align: center\">"
-                + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Language</strong></h4>"
+                + "<div class=\"col-md-3\" style=\"text-align: center\">"
+                + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Native Language</strong></h4>"
+                + "<div class=\"progress-bar-linear\">"
+                + "<p><strong>" + user.nativeLanguage + "</strong></p>"
+                + "<div class=\"progress-bar\">"
+                + "<span data-percent=\"100\"></span>"
+                + "</div>"
+                + "</div>"
+                + "</div>"
+                
+                + "<div class=\"col-md-3\" style=\"text-align: center\">"
+                + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Learning Language</strong></h4>"
                 + "<div class=\"progress-bar-linear\">"
                 + "<p><strong>" + user.learningLanguage + "</strong></p>"
                 + "<div class=\"progress-bar\">"
@@ -40,7 +53,7 @@ $(function() {
                 + "</div>"
                 + "</div>"
                 + "</div>"
-                + "<div class=\"col-md-4\" style=\"text-align: center\">"
+                + "<div class=\"col-md-3\" style=\"text-align: center\">"
                 + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Location</strong></h4>"
                 + "<div class=\"progress-bar-linear\">"
                 + "<p id=\"userlangandloc\" class=\"progress-bar-text\"><strong>" 
@@ -67,6 +80,7 @@ $(function() {
 		
     	 
     	$("#findMatchButton").click(function() {
+
     		
     		$.get("/usermatches", function(data){
     			console.log(data);
@@ -150,6 +164,7 @@ $(function() {
     		
     		
     	    $(".userMatches").dialog({width:1250});
+    	    
     	});
 		
 		
@@ -207,13 +222,17 @@ $(function() {
      // }
    // ];
 
-	
+
     
     /* var users = [
 
      {
         name: 'Beth',
         learning_language: 'Spanish',
+<<<<<<< HEAD
+=======
+        native_language: 'English',
+>>>>>>> 1cdb4c4bb960e2778fd1b081484a2c35d9ab87c9
         country: 'Spanish',
         email: 'dangelo0011@gmail.com',
         learning_language_id: '1',
@@ -227,6 +246,10 @@ $(function() {
     
          name: 'Bill',
          learning_language: 'Italian',
+<<<<<<< HEAD
+=======
+         native_language: 'French',
+>>>>>>> 1cdb4c4bb960e2778fd1b081484a2c35d9ab87c9
          country: 'Italian',
          email: 'dangelo0011@gmail.com',
          learning_language_id: '2',
@@ -240,6 +263,10 @@ $(function() {
      {
          name: 'Forest',
          learning_language: 'French',
+<<<<<<< HEAD
+=======
+         native_language: 'Italian',
+>>>>>>> 1cdb4c4bb960e2778fd1b081484a2c35d9ab87c9
          country: 'French',
          email: 'dangelo0011@gmail.com',
          learning_language_id: '3',
@@ -253,6 +280,7 @@ $(function() {
      {
          name: 'John',
          learning_language: 'German',
+         native_language: 'English',
          country: 'brazil',
          email: 'dangelo0011@gmail.com',
          learning_language_id: '4',
@@ -288,4 +316,3 @@ $(function() {
          
          
 });
-
