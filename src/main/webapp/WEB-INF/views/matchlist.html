@@ -13,24 +13,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- SITE TITLE -->
-    <title>Convo Cafe | Participating Restaurants</title>            
+    <title>Convo Cafe | Match List</title>            
         <!-- Latest Bootstrap min CSS -->
          <!-- Bootstrap Core CSS -->
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
-    
-    
-    
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">       
+        <!-- Google Font -->
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
-    
-    
-    
-   
-    
-      
+         
+
+
+
 </head>
 
 <body>
@@ -39,70 +35,60 @@
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <a class="navbar-brand" href="/"><img src="img/logo1.png" width = 75px heigth = 75px class="img-circle"/></a>
+    <a class="navbar-brand" href="index.html"><img src="img/logo1.png" width = 75px heigth = 75px class="img-circle"/></a>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         
-        <li><a href="/">Home</a></li>
-        <li><a href="/profile">My Profile</a></li>
-        <li><a href="/participatingrestaurants">Participating Restaurants</a></li>
+        <li><a href="/.html">Home</a></li>
+        <li><a href="profile.html">My Profile</a></li>
+        <li><a href="participatingrestaurants.html">Participating Restaurants</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Options<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/profile">My Profile</a></li>
-            <li><a href="/createrestaurant">Sign Up Your Restaurant</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="createuser.html">Update Profile</a></li>
+            <li><a id="popupDU">Delete Profile</a></li>
           </ul>
         </li>
       </ul>
       
-      
+  
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
-        </nav>        
+        </nav>
+    <!-- Navigation -->
+  <section class="main-section">
+            <div class="container" >
+                <div class="tab-container">
+                    <div id="item-one" style="display: block">
+                        <div class="row about">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="well well-lg">
+<h1>Matches</h1>
 
-            <section class="main-section">
-                <div class="container" >
-                    <div class="tab-container">
-                        <div id="item-one" style="display: block">
-                            <div class="row about">
-                                <div class="col-md-12 col-sm-12">
-                                    <div class="well well-lg" id="Italian">
+<div class="matches">
 
-       
-        <div class="row">
-            <div class="col-lg-12" >
-                <h1 class="page-header" text="center"><span th:text="${session.user.learningLanguage}"></span> Restaurants
-                    <small text="center">near <span th:text="${session.user.city}"></span>, <span th:text="${session.user.state}"></span></small>
-                </h1>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div id="map"></div> 
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-        
-<div class="restMap"></div>
-        <br/>
-        <br/>
-        
-<div class="row">
-    <div class="restMatches">
+
+
+
 </div>
-                        </div>
-                      </div><!-- END COL-->
-                    </div>
-               </div>       
-            </div> 
-         </div>
-</section>
+ 
+  
 
-    <div id="container">
+						      </div>
+                                
+					       </div><!-- END COL-->
+                            
+        
+    				    </div>
+
+    			     </div>       
+    		      </div> 
+   		       </div>      
+ 
+     <div id="container">
      	<div id="footer">
    			<div class="row">
              
@@ -117,32 +103,29 @@
                 	<a title="follow me on google plus" href="https://plus.google.com/u/0/100850869893908489916"><img alt="follow me on google plus" src="img/Google-plus-icon.png" width="100px" height="100px"></a>
               </span>
               </div>
-             <br>
+              <br>
               <div class="col-lg-12 text-center">
                   <p>Copyright ConvoCafe; CC 2016</p>
-			  </div>
+              </div>
+           </div>
+    </div>
+</div>
 
 
+
+    <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <script src= "https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src= "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
-    <!-- <script src="js/restaurant.js" type="text/javascript"></script> -->
-    <script type="text/javascript"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/maps.js"></script>
-    <script src="js/restaurant.js"></script>
+    <script src="js/usermatchlist.js"></script>
+    
    
-    <script src="js/form.js"></script>
-    
-
-    
     <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="JSON/users.JSON"></script>
     
-    
-    
-      
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb-8rUIYnfQ7Rg15sWA0eYMtfarAa-wvQ&callback=initMap"></script>
+   
 
 
    

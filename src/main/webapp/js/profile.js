@@ -175,126 +175,8 @@ $(function() {
 	},"json");
 	
 	
-    // var user = [
-
-    //  {
-    //     name: 'Beth',
-    //     learning_language: 'Spanish',
-    //     country: 'spain',
-    //     learning_language_id: '1',
-    //     user_city: 'Baltimore',
-    //     user_ability_level: 'Advanced',
-    //     img: 'bird',
-    //     user_bio: 'is simply dummy text of the printing and typesetting indust ry.asdkksk mc printing and typesetting industry. ms printing and typesetting industry. ksie dmsmakak ksksks kdhdhshsh sjsjsj'
-    // }
-
-    // {
     
-    //     name: 'Bill',
-     //    learning_language: 'Italian',
-    //     country: 'italy',
-    //     learning_language_id: '2',
-    //     user_city: 'Dundalk',
-    //     user_ability_level: 'Beginner',
-    //     img: 'shark',
-    //     user_bio: 'is simply dummy text of the printing and printing and typesetting industry. printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy tejksdhfsdjkf'
-    
-    //  }
 
-     // {
-     //     name: 'Forest',
-     //     learning_language: 'French',
-     //     country: 'france',
-     //     learning_language_id: '3',
-     //     user_city: 'Essex',
-     //     user_ability_level: 'Advanced',
-     //     img: 'turtle',
-     //     user_bio: 'is simply dummy text of the printing and typesetting industry. Software like Aldus PageMaker including versions of Lorem Ipsum printing and typesetting industry. printing and typesetting industry. printing and typesetting industry. printing and typesetting industry.'
-    
-     // }
-
-     // {
-     //     name: 'John',
-     //     learning_language: 'German',
-     //     country: 'brazil',
-     //     learning_language_id: '4',
-     //     user_city: 'Columbia',
-     //     user_ability_level: 'Advanced',
-     //     img: 'pony',
-     //     user_bio: 'is simply dummy text of the printing and typesetting industry. Software like Aldus PageMaker including versions of Lorem Ipsum printing and typesetting industry. printing and typesetting industry. printing and typesetting industry.'
-    
-     // }
-   // ];
-
-
-    
-    /* var users = [
-
-     {
-        name: 'Beth',
-        learning_language: 'Spanish',
-<<<<<<< HEAD
-=======
-        native_language: 'English',
->>>>>>> 1cdb4c4bb960e2778fd1b081484a2c35d9ab87c9
-        country: 'Spanish',
-        email: 'dangelo0011@gmail.com',
-        learning_language_id: '1',
-        user_city: 'Baltimore',
-        user_ability_level: 'Advanced',
-        img: 'bird',
-        user_bio: 'is simply dummy text of the printing and typesetting industry.asdkkskmcmsksiedmsmakak ksksks kdhdhshsh sjsjsj'
-    },
-
-     {
-    
-         name: 'Bill',
-         learning_language: 'Italian',
-<<<<<<< HEAD
-=======
-         native_language: 'French',
->>>>>>> 1cdb4c4bb960e2778fd1b081484a2c35d9ab87c9
-         country: 'Italian',
-         email: 'dangelo0011@gmail.com',
-         learning_language_id: '2',
-         user_city: 'Dundalk',
-         user_ability_level: 'Beginner',
-         img: 'shark',
-         user_bio: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy tejksdhfsdjkf'
-    
-      },
-
-     {
-         name: 'Forest',
-         learning_language: 'French',
-<<<<<<< HEAD
-=======
-         native_language: 'Italian',
->>>>>>> 1cdb4c4bb960e2778fd1b081484a2c35d9ab87c9
-         country: 'French',
-         email: 'dangelo0011@gmail.com',
-         learning_language_id: '3',
-         user_city: 'Essex',
-         user_ability_level: 'Advanced',
-         img: 'turtle',
-         user_bio: 'is simply dummy text of the printing and typesetting industry. Software like Aldus PageMaker including versions of Lorem Ipsum'
-    
-     },
-
-     {
-         name: 'John',
-         learning_language: 'German',
-         native_language: 'English',
-         country: 'brazil',
-         email: 'dangelo0011@gmail.com',
-         learning_language_id: '4',
-         user_city: 'Columbia',
-         user_ability_level: 'Advanced',
-         img: 'pony',
-         user_bio: 'is simply dummy text of the printing and typesetting industry. Software like Aldus PageMaker including versions of Lorem Ipsum'
-    
-     }
-     ];*/
 	$("#emailButton").click(function(){
 		alert("Your message has been sent!")
 		console.log("inside submit button");
@@ -317,6 +199,5 @@ $(function() {
 			}
 		});
 	});
-         
          
 });
