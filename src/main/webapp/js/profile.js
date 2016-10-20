@@ -134,12 +134,14 @@ $(function() {
     		                    + "</div>"
     		                    
     		                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
-    		                    + "<button id=\"sendEmailButton\" onclick=\"showForm(" + counter + ")\" class=\"btn btn-info btn-lg\" role=\"alert\">"
+    		                    + "<button id=\"sendEmailButton\" onclick=\"showForm(" + counter + ")\" class=\"btn btn-info btn-lg\" style=\"display: block; margin: 0 auto;\" role=\"alert\">"
     		                    + "<span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span>"
     		                    + " Send " + this.name + " a message!!</button>"
     		                    + "</div>"
     		                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
+
     		                    + "<button id=\"findRestaurantButton\" onclick=\"findRestaurant()\" class=\"btn btn-info btn-lg\" role=\"alert\">"
+
     		                    + "<span class=\"glyphicon glyphicon-globe\" aria-hidden=\"true\"></span>"
     		                    + " Find a " + this.learningLanguage + " Restaurant Near You!!</button>"
     		                    + "</div>"
@@ -174,8 +176,6 @@ $(function() {
 		
 	},"json");
 	
-	
-    
 
 	$("#emailButton").click(function(){
 		alert("Your message has been sent!")
@@ -200,4 +200,5 @@ $(function() {
 		});
 	});
          
+
 });

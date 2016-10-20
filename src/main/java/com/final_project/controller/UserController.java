@@ -40,6 +40,7 @@ public class UserController {
 		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
 	}
 	
+	//returns users with same language profiles
 	@RequestMapping(value= "/usermatches", method = RequestMethod.GET)
 	public ResponseEntity<ArrayList<WholeUser>> getUserMatches(HttpSession sessionObj) {
 		List<User> users = userService.getAllUsers();

@@ -122,26 +122,50 @@
     </div><!-- ends row -->
 </div><!--container-->
 
-    <!-- /.container -->
-     <div id="container">
-     	<div id="footer">
-   			<div class="row">
-             
-              <div style="text-align:center" class= "socialBar">
-              	<span class="social">
-                	<a title="follow me on Twitter" href="http://www.twitter.com/ConvoCafeMD"><img alt="follow me on Twitter" src="img/Twitter-icon.png" width="100px" height="100px"></a>
-                <span class="twitterSpace"></span>
-                	<a title="follow me on facebook" href="http://www.facebook.com/ConvoCafe"><img alt="follow me on facebook" src="img/facebook-icon(1).ico" width="100px" height="100px"></a>
-                <span class="facebookSpace"></span>
-                	<a title="follow me on instagram" href="http://www.instagram.com/ConvoCafe"><img alt="follow me on instagram" src="img/instaIcon.jpg" width="100px" height="100px"></a>
-                <span class="instaSpace"></span>
-                	<a title="follow me on google plus" href="https://plus.google.com/u/0/100850869893908489916"><img alt="follow me on google plus" src="img/Google-plus-icon.png" width="100px" height="100px"></a>
-              </span>
+
+
+  <div id="container">
+  
+   
+   <div id="footer">
+
+   		<div class="row">
+             <div class="col-lg-12 text-center">
+                  <p>Copyright &copy; CC 2016</p>
               </div>
-              <br>
-              <div class="col-lg-12 text-center">
-                  <p>Copyright ConvoCafe; CC 2016</p>
-			  </div>
+              <div style="text-align:center">
+                <a target="_blank" title="follow me on Twitter" href="http://www.twitter.com/ConvoCafeMD"><img alt="follow me on Twitter" src="https://c866088.ssl.cf3.rackcdn.com/assets/twitter30x30.png" border=0></a>
+                              
+                <a target="_blank" title="follow me on facebook" href="http://www.facebook.com/ConvoCafe"><img alt="follow me on facebook" src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png" border=0></a>
+                               
+                <a target="_blank" title="follow me on instagram" href="http://www.instagram.com/ConvoCafe"><img alt="follow me on instagram" src="https://c866088.ssl.cf3.rackcdn.com/assets/instagram30x30.png" border=0></a>
+                <a target="_blank" title="follow me on google plus" href="https://plus.google.com/u/0/100850869893908489916"><img alt="follow me on google plus" src="https://c866088.ssl.cf3.rackcdn.com/assets/googleplus30x30.png" border=0></a>
+
+                </div>
+            </div> 
+         </div>
+    </div>
+             
+
+    <div id="dialog1" title="Log In">
+        
+            <form id="loginForm" method="post">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+             </div>
+  
+            <button class="btn btn-default" id="loginButton">Submit</button>
+            <span style="color:red;" th:text="${session.loginMessage}">
+        </form>
+
+    </div>
+
+
 
 
  
@@ -154,7 +178,13 @@
     <script src= "https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src= "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+    
+   	
+   	<script src="js/formValidation.js"></script>
     <script src="js/form.js"></script>
+    
+    
     
     <!-- Bootstrap Core JavaScript -->
     
@@ -210,6 +240,7 @@
     	
     	
     });
+    
     
     
     </script>
