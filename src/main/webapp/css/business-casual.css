@@ -115,6 +115,7 @@ html, body {
    margin:0;
    padding:0;
    height:100%;
+
 }
 #container {
    min-height:100%;
@@ -222,13 +223,16 @@ html, body {
 	height: 100%;
 	background: linear-gradient(to right, pink, #ffff94, pink);
 	/* Standard syntax (must be last) */
+
 }
 
 
 #null {
 	height: 100%;
 	background-color:white;
+
 }
+
 
 #English {
 	height: 100%;
@@ -243,16 +247,12 @@ html, body {
 }
 
 #German {
-<<<<<<< HEAD
+
+
 
     height: 100%;
     background: linear-gradient(to right, #505050, pink, #ffff80); /* Standard syntax (must be last) */
 
-=======
-	height: 100%;
-	background: linear-gradient(to right, #505050, pink, #ffff80);
-	/* Standard syntax (must be last) */
->>>>>>> forrest
 }
 
 #msform {
@@ -392,23 +392,12 @@ html, body {
 }
 
 #messagePic {
-<<<<<<< HEAD
         
-    height: 125px;
-    width: 125px;
-	align: center-block;
-    
-    border-image: 20px;
-      }
-=======
-	height: 165px;
+    height: 165px;
 	width: 165px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-image: 20px;
+	align: center-block;
+    border-image: 20px;
 }
->>>>>>> c8d2eada8705b1a1f08caecda1ea9ae34bd39ec1
 
 #profileBio {
 	margin-top: 20px;
@@ -438,7 +427,6 @@ html, body {
 }
 
 #indUserMatch {
-<<<<<<< HEAD
   
   	height: 315px;
     padding-bottom: 15px;
@@ -460,15 +448,17 @@ html, body {
 .userProfile{
 	
 	height: 375px;
-=======
 	padding-bottom: 15px;
 }
 
 #sendEmailButton {
-	float: right;
+	
+	padding-bottom: 15px;
 }
 
 #getRestaurantButton {
-	float: right;
->>>>>>> c8d2eada8705b1a1f08caecda1ea9ae34bd39ec1
+	
+	padding-bottom: 15px;
 }
+
+
