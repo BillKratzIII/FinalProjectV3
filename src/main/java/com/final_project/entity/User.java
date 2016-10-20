@@ -65,6 +65,12 @@ private static final long serialVersionUID = 1L;
 	@Column (name="avitar")
 	private String avitar;
 	
+	@Column (name="lat")
+	private String lat;
+	
+	@Column (name="lng")
+	private String lng;
+	
 	/*getters and setters below- */
 	public int getUserId() {
 		return userId;
@@ -185,7 +191,22 @@ private static final long serialVersionUID = 1L;
 	public void setAvitar(String avitar) {
 		this.avitar = avitar;
 	}
-	
+
+	public String getLat() {
+		return lat;
+	}
+
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+
+	public String getLng() {
+		return lng;
+	}
+
+	public void setLng(String lng) {
+		this.lng = lng;
+	}
 	
 	
 }//class
