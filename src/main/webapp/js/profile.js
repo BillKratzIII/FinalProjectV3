@@ -93,27 +93,36 @@ $(function() {
     			
     			$.each(users, function(){
     				
-    		        $('.userMatches').append("<div id=\"indUserMatch\">"
-
-    		                    +"<div class=\"container\" id=\""+this.learningLanguage+"\">"
+    		        $('.userMatches').append("<div id=\"matchProfile\">"
+    		        			+ "<div class=\"container\" id=\""+this.learningLanguage+"\">"
     		                    + "<div class=\"tab-container\">"
     		                    + "<div id=\"item-one\" style=\"display: block\">"
     		                    + "<div class=\"row about\">"
     		                    + "<div class=\"col-md-3 col-sm-12\">"
     		                    + "<div class=\"about_me text-center\">"
     		                    + "<h3>" + this.name + "</h3>"
-    		                    + "<div id=\"messagePic\">"
+    		                    + "<div id=\"profilePic\">"
     		                    + "<img src=\"img/" + this.avitar + ".png\" class=\"img-responsive\" alt=\"\" />"
     		                    + "</div>"
     		                    + "</div>"
     		                    + "</div>"
     		                    + "<div class=\"col-md-9 col-sm-6\">"
     		                    + "<h3><strong>About Me:</strong></h3>"
-    		                    + "<p id=profileBio><strong>" + this.aboutMe +"</strong></p>"
+    		                    + "<p id=profileBio><strong>" +this.aboutMe +"</strong></p>"
     		                    + "</div>"
     		                    
-    		                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
-    		                    + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Language</strong></h4>"
+    		                    + "<div class=\"col-md-3\" style=\"text-align: center\">"
+    		                    + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Native Language</strong></h4>"
+    		                    + "<div class=\"progress-bar-linear\">"
+    		                    + "<p><strong>" + this.firstLanguage + "</strong></p>"
+    		                    + "<div class=\"progress-bar\">"
+    		                    + "<span data-percent=\"100\"></span>"
+    		                    + "</div>"
+    		                    + "</div>"
+    		                    + "</div>"
+    		                    
+    		                    + "<div class=\"col-md-3\" style=\"text-align: center\">"
+    		                    + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Learning Language</strong></h4>"
     		                    + "<div class=\"progress-bar-linear\">"
     		                    + "<p><strong>" + this.learningLanguage + "</strong></p>"
     		                    + "<div class=\"progress-bar\">"
@@ -121,7 +130,7 @@ $(function() {
     		                    + "</div>"
     		                    + "</div>"
     		                    + "</div>"
-    		                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
+    		                    + "<div class=\"col-md-3\" style=\"text-align: center\">"
     		                    + "<h4 class=\"about_title\" id=\"langandloc\"><strong>Location</strong></h4>"
     		                    + "<div class=\"progress-bar-linear\">"
     		                    + "<p id=\"userlangandloc\" class=\"progress-bar-text\"><strong>" 
@@ -134,27 +143,28 @@ $(function() {
     		                    + "</div>"
     		                    
     		                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
-    		                    + "<button id=\"sendEmailButton\" onclick=\"showForm(" + counter + ")\" class=\"btn btn-info btn-lg\" style=\"display: block; margin: 0 auto;\" role=\"alert\">"
+    		                    + "<button id=\"sendEmailButton\" onclick=\"showForm(" + counter + ")\" class=\"btn btn-info btn-block\" style=\"display: block; margin: 0 auto;\" role=\"alert\">"
     		                    + "<span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span>"
-    		                    + " Send " + this.name + " a message!!</button>"
+    		                    + " Send " + this.name + " a Message!</button>"             
     		                    + "</div>"
+    		                    + "<div class=\"col-md-1\"></div>"
     		                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
-
-    		                    + "<button id=\"findRestaurantButton\" onclick=\"findRestaurant()\" class=\"btn btn-info btn-lg\" role=\"alert\">"
-
+    		                    + "<button id=\"findRestaurantButton\" onclick=\"findRestaurant()\" class=\"btn btn-info btn-block\" role=\"alert\">"
     		                    + "<span class=\"glyphicon glyphicon-globe\" aria-hidden=\"true\"></span>"
-    		                    + " Find a " + this.learningLanguage + " Restaurant Near You!!</button>"
-    		                    + "</div>"
-    		                    + "</div>"
-    		                    
-    		                    + "<div class=\"col-md-9\" style=\"text-align: center\">"
-    		                    + "<input type=\"hidden\" id=\"email" + counter + "\" value=\"" + this.email + "\">"     
+    		                    + " Find " + this.learningLanguage + " Restaurants!!</button>"
     		                    + "</div>"
     		                    
     		                    
     		                    + "</div>"
     		                    + "</div>"
+    		                    + "</div>"
+    		             
     		                    
+    		                    
+    		                    + "</div>"
+    		                    + "</div>"
+    		                    + "</div>"
+    		                    + "</div>"
 
     		                    )                            
     		                    
