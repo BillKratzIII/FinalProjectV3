@@ -97,6 +97,12 @@
                  
                  
              },
+             
+             aboutMe: {
+             	
+                 maxlength: 300
+             },
+             
             streetAddress: {
                 required: true,
                 minlength: 4
@@ -139,8 +145,10 @@
             skillLevelId: {
                 required: true
                 
-                
-            }
+            },
+            
+            
+            
         },//rules
         messages: {
         	name: "Please Enter Your Name",
@@ -158,6 +166,13 @@
         		required: "Field is Required",
         		equalTo: "Must Be Identical to Password Field"
         	},
+        	
+        	aboutMe: {
+                
+            	maxlength: "Max number of characters reached..."
+                
+            },
+            
         	ageRangeId: "Field is Required",
             
             gender: "Field is Required",
@@ -167,6 +182,8 @@
             learningLanguageId: "Field is Required",
             
             skillLevelId: "Field is Required"
+            
+            
         	
         	
         }//messages

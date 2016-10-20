@@ -460,19 +460,19 @@ span.socialSpace {
 	
 	margin: 0 auto;
 	height: 37px;
-	padding-bottom: 5px;
+	margin-bottom: 10px;
 }
 #findRestaurantButton{
 	
 	margin: 0 auto;
 	height: 37px;
-	padding-bottom: 5px;
+	margin-bottom: 10px;
 	
 }
 
 .userProfile{
 	
-	height: 375px;
+	height: relative;
 	padding-bottom: 15px;
 	
 	
