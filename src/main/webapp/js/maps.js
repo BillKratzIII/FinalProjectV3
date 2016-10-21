@@ -16,6 +16,7 @@
 		$.get("/session", function(data){
 			user=data;
 			
+
 			map = new google.maps.Map(document.getElementById('map'), {
 		        zoom: 14,
 		        center: new google.maps.LatLng(user.lat, user.lng),

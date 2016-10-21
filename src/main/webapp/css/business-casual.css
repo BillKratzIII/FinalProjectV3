@@ -13,7 +13,12 @@
     background-size: cover;
     -o-background-size: cover;
     }*/
-    
+.second-section{
+	height: 100%;
+	background: linear-gradient(to right, lightgreen, white, pink);
+	width: 50%;
+	align: center;
+} 
 .divBackgroundImage {
 	height: 100%;
 	width: 100%;
@@ -92,6 +97,7 @@ hr {
 	padding: 30px 15px;
 	background: #fff;
 	background: rgba(255, 255, 255, 0.9);
+	border-radius: 20px;
 }
 
 .intro-text {
@@ -118,19 +124,22 @@ html, body {
    height:100%;
 
 }
+
 #container {
    min-height:100%;
    position:relative;
    align:center;
+   border-radius: 20px;
    
 }
 
 
 #footer {
-   position:absolute;
+   position:relative;
    bottom:0;
    width:100%;
    height:60px;   /* Height of the footer */
+   align: center;
 }
 span.twitterSpace {
     padding-left: 50px;
@@ -219,20 +228,26 @@ span.socialSpace {
 }
 
 #Italian {
+	
+	border-radius: 25px;
 	height: 100%;
-	background: linear-gradient(to right, lightgreen, white, pink);
+	background: linear-gradient(to right, lightgreen, white, white, pink);
 	/* Standard syntax (must be last) */
 }
 
 #French {
+	
+	border-radius: 25px;
 	height: 100%;
-	background: linear-gradient(to right, lightblue, white, pink);
+	background: linear-gradient(to right, lightblue, white, white, pink);
 	/* Standard syntax (must be last) */
 }
 
 #Spanish {
+	
+	border-radius: 25px;
 	height: 100%;
-	background: linear-gradient(to right, pink, #ffff94, pink);
+	background: linear-gradient(to bottom, #b53237, #ffff94, #ffff94, #b53237);
 	/* Standard syntax (must be last) */
 
 }
@@ -246,23 +261,27 @@ span.socialSpace {
 
 
 #English {
+	
+	border-radius: 25px;
 	height: 100%;
 	background: linear-gradient(to right, pink, white, white, lightblue);
 	/* Standard syntax (must be last) */
 }
 
 #Japanese {
+	
+	border-radius: 25px;
 	height: 100%;
-	background: linear-gradient(to right, white, white, pink, white, white);
+	background: radial-gradient(red, white, white, white);
 	/* Standard syntax (must be last) */
 }
 
 #German {
 
 
-
+	border-radius: 25px;
     height: 100%;
-    background: linear-gradient(to right, #505050, pink, #ffff80); /* Standard syntax (must be last) */
+    background: linear-gradient(to bottom, #7a7676, #db3238, #ffff60); /* Standard syntax (must be last) */
 
 }
 
@@ -404,8 +423,8 @@ span.socialSpace {
 
 #messagePic {
         
-    height: 165px;
-	width: 165px;
+    height: 175px;
+	width: 175px;
 	align: center-block;
     border-image: 20px;
 }
@@ -437,29 +456,33 @@ span.socialSpace {
 	margin-bottom: 10px;
 }
 
-#indUserMatch {
+#matchProfile {
   
-  	height: 315px;
-    padding-bottom: 15px;
+  	
+    padding-bottom: 20px;
     
 }
 
 #sendEmailButton{
 	
 	margin: 0 auto;
-	padding-bottom: 5px;
+	height: 37px;
+	margin-bottom: 10px;
 }
-#getRestaurantButton{
+#findRestaurantButton{
 	
 	margin: 0 auto;
-	padding-bottom: 5px;
+	height: 37px;
+	margin-bottom: 10px;
 	
 }
 
 .userProfile{
 	
-	height: 375px;
+	height: relative;
 	padding-bottom: 15px;
+	
+	
 }
 
 #sendEmailButton {
@@ -472,4 +495,8 @@ span.socialSpace {
 	padding-bottom: 15px;
 }
 
-
+#restPic {
+	
+	height: 200px;
+	width: 333px;
+}

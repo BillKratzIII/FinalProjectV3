@@ -34,12 +34,15 @@
             },
             password: {
                 required: true,
-                minlength: 2
+                minlength: 8,
+                pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^\&*\)\(+=._-])[0-9a-zA-Z!@#\$%\^\&*\)\(+=._-]{8,}$/
                 
             },
             confirmPassword: {
             	required: true,
-                equalTo: "#password"
+                equalTo: "#password",
+                minlength: 8,
+                pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^\&*\)\(+=._-])[0-9a-zA-Z!@#\$%\^\&*\)\(+=._-]{8,}$/
                 
                 
             },
@@ -82,15 +85,24 @@
              },
              password: {
                  required: true,
-                 minlength: 2
+                 minlength: 8,
+                 pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^\&*\)\(+=._-])[0-9a-zA-Z!@#\$%\^\&*\)\(+=._-]{8,}$/
                  
              },
              confirmPassword: {
              	required: true,
-                 equalTo: "#password"
+                 equalTo: "#password",
+                 minlength: 8,
+                 pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^\&*\)\(+=._-])[0-9a-zA-Z!@#\$%\^\&*\)\(+=._-]{8,}$/
                  
                  
              },
+             
+             aboutMe: {
+             	
+                 maxlength: 300
+             },
+             
             streetAddress: {
                 minlength: 4
             },
@@ -133,8 +145,10 @@
             skillLevelId: {
                 required: true
                 
-                
-            }
+            },
+            
+            
+            
         },//rules
         messages: {
         	name: "Please Enter Your Name",
@@ -145,10 +159,20 @@
         		required: "Please Enter Your Zip Code",
         		minlength: "Enter a Valid Zip Code"
         	},
+        	password: {
+        		pattern: "Password must be 8 characters long, with one uppercase letter and one special character"
+        	},
         	confirmPassword: {
         		required: "Field is Required",
         		equalTo: "Must Be Identical to Password Field"
         	},
+        	
+        	aboutMe: {
+                
+            	maxlength: "Max number of characters reached..."
+                
+            },
+            
         	ageRangeId: "Field is Required",
             
             gender: "Field is Required",
@@ -158,6 +182,8 @@
             learningLanguageId: "Field is Required",
             
             skillLevelId: "Field is Required"
+            
+            
         	
         	
         }//messages
