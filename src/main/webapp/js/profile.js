@@ -26,6 +26,7 @@ function findRestaurant(i){
 
 
 $(function() {
+	
 	$(".userMatches").hide();
 	
 	var user;
@@ -99,7 +100,7 @@ $(function() {
 		
     	 
     	$("#findMatchButton").click(function() {
-
+    		$(".userMatches").html("");
     		
     		$.get("/usermatches", function(data){
     			users=data;   
