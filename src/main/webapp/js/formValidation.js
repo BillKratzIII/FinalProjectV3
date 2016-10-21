@@ -78,7 +78,7 @@
                 
             },
             email: {
-            	
+            	required: true,
                 email: true
                 
                  
@@ -104,7 +104,6 @@
              },
              
             streetAddress: {
-                required: true,
                 minlength: 4
             },
             city: {
@@ -114,12 +113,13 @@
             },
             state: {
                 required: true,
-                minlength: 2                
+                minlength: 2               
                 
             },
             zip: {
                 required: true,
-                minlength: 5
+                minlength: 5,
+                maxlength: 5
                 
             },
             ageRangeId: {

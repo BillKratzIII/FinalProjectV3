@@ -1,16 +1,32 @@
 function showForm(i) {
-		console.log("inside showForm");
 	    $("#dialog1").dialog();
 	    $("#address").val($("#email" + i).val());
+	    $("#subject").val("Message from Convo Cafe User: " + $("#username").val());
 	};
 	
-function findRestaurant(){
-	location.href = "/participatingrestaurants";
+function findRestaurant(i){
+	
+	var data = {
+			city : $("#city" + i).val(),
+			state : $("#state" + i).val(),
+			name : $("#name" + i).val(),
+			lat : $("#lat" + i).val(),
+			lng : $("#lng" + i).val()
+	}
+	
+	
+	
+	$.post("/setmatch", data, function(data){
+		location.href = "/participatingrestaurants";
+	})
+	
+	
 };
 
 
 
 $(function() {
+	
 	$(".userMatches").hide();
 	
 	var user;
@@ -84,17 +100,19 @@ $(function() {
 		
     	 
     	$("#findMatchButton").click(function() {
-
+    		$(".userMatches").html("");
     		
     		$.get("/usermatches", function(data){
-    			console.log(data);
     			users=data;   
     			var counter = 0;
     			
     			$.each(users, function(){
-    				
+
+    	
+    			  if(!(this.email == user.email)){
     		        $('.userMatches').append("<div id=\"matchProfile\">"
-    		        			+ "<div class=\"container\" id=\""+this.learningLanguage+"\">"
+    		        			
+    		                    +"<div class=\"container\" id=\""+this.learningLanguage+"\">"
     		                    + "<div class=\"tab-container\">"
     		                    + "<div id=\"item-one\" style=\"display: block\">"
     		                    + "<div class=\"row about\">"
@@ -149,7 +167,10 @@ $(function() {
     		                    + "</div>"
     		                    + "<div class=\"col-md-1\"></div>"
     		                    + "<div class=\"col-md-4\" style=\"text-align: center\">"
-    		                    + "<button id=\"findRestaurantButton\" onclick=\"findRestaurant()\" class=\"btn btn-info btn-block\" role=\"alert\">"
+
+
+    		                    + "<button id=\"findRestaurantButton\" onclick=\"findRestaurant(" + counter +")\" class=\"btn btn-info btn-lg\" role=\"alert\">"
+
     		                    + "<span class=\"glyphicon glyphicon-globe\" aria-hidden=\"true\"></span>"
     		                    + " Find " + this.learningLanguage + " Restaurants!!</button>"
     		                    + "</div>"
@@ -160,6 +181,29 @@ $(function() {
     		                    + "</div>"
     		             
     		                    
+    		                    + "<div class=\"col-md-9\" style=\"text-align: center\">"
+    		                    + "<input type=\"hidden\" id=\"streetAddress" + counter + "\" value=\"" + this.streetAddress + "\">"     
+    		                    + "</div>"
+    		                    
+    		                    + "<div class=\"col-md-9\" style=\"text-align: center\">"
+    		                    + "<input type=\"hidden\" id=\"city" + counter + "\" value=\"" + this.city + "\">"     
+    		                    + "</div>"
+    		                    
+    		                    + "<div class=\"col-md-9\" style=\"text-align: center\">"
+    		                    + "<input type=\"hidden\" id=\"state" + counter + "\" value=\"" + this.state + "\">"     
+    		                    + "</div>"
+    		                    
+    		                    + "<div class=\"col-md-9\" style=\"text-align: center\">"
+    		                    + "<input type=\"hidden\" id=\"name" + counter + "\" value=\"" + this.name + "\">"     
+    		                    + "</div>"
+    		                    
+    		                    + "<div class=\"col-md-9\" style=\"text-align: center\">"
+    		                    + "<input type=\"hidden\" id=\"lat" + counter + "\" value=\"" + this.lat + "\">"     
+    		                    + "</div>"
+    		                    
+    		                    + "<div class=\"col-md-9\" style=\"text-align: center\">"
+    		                    + "<input type=\"hidden\" id=\"lng" + counter + "\" value=\"" + this.lng + "\">"     
+    		                    + "</div>"
     		                    
     		                    + "</div>"
     		                    + "</div>"
@@ -172,6 +216,7 @@ $(function() {
     		            $('#messageBackground').addClass(this.learningLanguage);  
     		        	counter++;
     		        	return counter<5;
+    			  		}
     		         });
     			
     			
@@ -189,7 +234,6 @@ $(function() {
 
 	$("#emailButton").click(function(){
 		alert("Your message has been sent!")
-		console.log("inside submit button");
 		$.ajax({
 			url: "/send-mail",
 			type:"POST",
@@ -201,7 +245,6 @@ $(function() {
 			contentType:"application/json; charset=utf-8",
 			dataType:"json",
 			complete: function(){
-				console.log("Email Sent?");
 				location.href = "/profile.html";
 			},
 			error: function(){

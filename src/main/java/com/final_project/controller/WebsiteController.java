@@ -34,8 +34,13 @@ public class WebsiteController {
 	
 	@RequestMapping("/profile")
     public ModelAndView profile(HttpSession sessionObj, ModelAndView mv)
-    {       
-        return mv;
+    {   
+		if(sessionObj.getAttribute("user") != null){
+			return mv;
+		}else{
+			mv.setViewName("index");
+			return mv;
+		}
     }
 	
 	@RequestMapping("/createrestaurant")
@@ -48,7 +53,12 @@ public class WebsiteController {
 	@RequestMapping("/participatingrestaurants")
     public ModelAndView participatingrestaurants(HttpSession sessionObj, ModelAndView mv)
     {
-        return mv;
+		if(sessionObj.getAttribute("user") != null){
+			return mv;
+		}else{
+			mv.setViewName("index");
+			return mv;
+		}
     }
 	
 	@RequestMapping("/createuser")
@@ -64,17 +74,14 @@ public class WebsiteController {
 			u = userService.getUserByEmail(user.getEmail());
 		System.out.println("User logging in is  " + u.getName());
 		}catch(IndexOutOfBoundsException e){
-			sessionObj.setAttribute("loginMessage", "Email or Password do not match");
+			
 		}
 		if(userService.verification(user, u)){
 			sessionObj.setAttribute("loginMessage", "");
 			WholeUser wholeUser = WholeUser.makeWholeUser(u);
 			sessionObj.setAttribute("user", wholeUser);
-			sessionObj.setAttribute("loginMessage", wholeUser.getName() + " Successfully logged in");
-			System.out.println("Success!");
 			return new ResponseEntity<Void>(HttpStatus.OK);
 		}else{
-			sessionObj.setAttribute("loginMessage", "Email or Password do not match");
 			mv.setViewName("redirect:/");
 			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
 		}
@@ -84,7 +91,6 @@ public class WebsiteController {
 	@RequestMapping("/logout")
 	public ModelAndView logout(HttpSession sessionObj, ModelAndView mv){
 		sessionObj.removeAttribute("user");
-		sessionObj.setAttribute("loginMessage", "You have successfully logged out");
 		System.out.println("session cleared");
 		mv.setViewName("redirect:/");
 		return mv;
@@ -93,6 +99,18 @@ public class WebsiteController {
 	@RequestMapping(value= "/session", method = RequestMethod.GET)
 	public ResponseEntity<Object> getUserInSession(HttpSession sessionObj) {
 		Object obj = sessionObj.getAttribute("user");
+		return new ResponseEntity<Object>(obj, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value="/setmatch", method = RequestMethod.POST)
+	public ResponseEntity<Void> addMatch(User user, HttpSession sessionObj){
+		sessionObj.setAttribute("match", user);
+		return new ResponseEntity<Void>(HttpStatus.OK);
+	}
+	
+	@RequestMapping(value="/getmatch", method = RequestMethod.GET)
+	public ResponseEntity<Object> getMatch(HttpSession sessionObj){
+		Object obj = sessionObj.getAttribute("match");
 		return new ResponseEntity<Object>(obj, HttpStatus.OK);
 	}
 	

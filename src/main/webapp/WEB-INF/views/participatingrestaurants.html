@@ -36,7 +36,7 @@
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <a class="navbar-brand" href="/"><img src="img/logo1.png" width = 75px heigth = 75px class="img-circle"/></a>
+    <a class="navbar-brand" href="/"><img src="img/logo1.png" width = 75px height = 75px class="img-circle"/></a>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -65,7 +65,7 @@
                         <div id="item-one" style="display: block">
                             <div class="row about">
                                 <div class="col-md-12 col-sm-12">
-                                    <div class="well well-lg" id="Italian">
+                                    <div class="well well-lg" th:id="${session.user.learningLanguage}">
 
        
         <div class="row">
@@ -101,10 +101,11 @@
             </div> 
          </div>
 
+
          
  <br/>
 
-       </div>
+
 
 <br/>
 <br/>
@@ -113,11 +114,11 @@
  
   
   
-         <div class="container">
-              
-             <div class="rowRests">
-              <div class="box">
-              
+
+           <div class="container">  
+            <div class="rowrowRests">
+              <div class="box" th:id="${session.user.learningLanguage}">
+
               	 
                 <br/>
                   
@@ -156,9 +157,9 @@
                 <span class="twitterSpace"></span>
                 	<a title="follow me on facebook" href="http://www.facebook.com/ConvoCafe"><img alt="follow me on facebook" src="img/facebook-icon(1).ico" width="100px" height="100px"></a>
                 <span class="facebookSpace"></span>
-                	<a title="follow me on instagram" href="http://www.instagram.com/ConvoCafe"><img alt="follow me on instagram" src="img/instaIcon.jpg" width="100px" height="100px"></a>
+                	<a title="follow me on instagram" href="http://www.instagram.com/ConvoCafe"><img alt="follow me on instagram" src="img/instaIcon.png" width="90px" height="90px"></a>
                 <span class="instaSpace"></span>
-                	<a title="follow me on google plus" href="https://plus.google.com/u/0/100850869893908489916"><img alt="follow me on google plus" src="img/Google-plus-icon.png" width="100px" height="100px"></a>
+                	<a title="follow me on google plus" href="https://plus.google.com/u/0/100850869893908489916"><img alt="follow me on google plus" src="img/Google-plus-icon.png" width="90px" height="90px"></a>
               </span>
               </div>
               <br>
@@ -189,7 +190,7 @@
     
     
       
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb-8rUIYnfQ7Rg15sWA0eYMtfarAa-wvQ&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCI99j2TRL8VywBAovrE9jOJEUwL6NR5CA&libraries=places&callback=initMap"></script>
 
 
    

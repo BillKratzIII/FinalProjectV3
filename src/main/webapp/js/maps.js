@@ -1,61 +1,104 @@
 
 	
-
+	var map;
+    var infowindow;
 
 
 	function initMap() {
 		var user;
+		var match;
+		
+		$.get("/getmatch", function(data){
+			match = data;
+		})
+		
 		
 		$.get("/session", function(data){
-			console.log(data);
 			user=data;
 			
-			var map = new google.maps.Map(document.getElementById('map'), {
-		        zoom: 16,
+
+			map = new google.maps.Map(document.getElementById('map'), {
+		        zoom: 14,
 		        center: new google.maps.LatLng(user.lat, user.lng),
 		    });
 
-		    var infowindow = new google.maps.InfoWindow({});
+			infowindow = new google.maps.InfoWindow();
+			
+	        var service = new google.maps.places.PlacesService(map);
+	        service.nearbySearch({
+	          location: new google.maps.LatLng(user.lat, user.lng),
+	          radius: 5000,
+	          type: ['restaurant'],
+	          keyword: [getCuisine(user.learningLanguage)]
+	        }, callback);
 			
 		    marker = new google.maps.Marker({
+		    	icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
 	            position: new google.maps.LatLng(user.lat, user.lng),
-	            map: map
+	            map: map,
+	            title: 'My location'
 	        });
+		    
+		    google.maps.event.addListener(marker, 'click', function() {
+		    	  var contentString = user.name + ": " + user.city + ", " + user.state;
+		          infowindow.setContent(contentString);		          
+		          infowindow.open(map, this);
+		        });
+		    
+		    marker2 = new google.maps.Marker({
+		    	icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+		    	position: new google.maps.LatLng(match.lat, match.lng),
+		    	map: map,
+		    	title: match.name
+		    });
+		    
+		    google.maps.event.addListener(marker2, 'click', function() {
+		    	  var contentString = match.name + ": " + match.city + ", " + match.state;
+		          infowindow.setContent(contentString);
+		          infowindow.open(map, this);
+		        });
 			
 			
 			},"json");
 		
+		};
 		
-    
-		var sotta = {
-				info: '<strong>Sotta Sopra</strong><br>\
-                    405 N Charles St<br> Baltimore, MD 21201<br>\
-                    <a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-                    lat: 39.294415,
-                    long: -76.615134
-		};
+		function callback(results, status) {
+	        if (status === google.maps.places.PlacesServiceStatus.OK) {
+	          for (var i = 0; i < results.length; i++) {
+	            createMarker(results[i]);
+	          }
+	        }
+	      }
+		
+		function createMarker(place) {
+	        var placeLoc = place.geometry.location;
+	        var marker = new google.maps.Marker({
+	          map: map,
+	          position: place.geometry.location
+	        });
 
-		var aggio = {
-				info: '<strong>Aggio</strong><br>\
-					614 Water St<br> Baltimore, MD 21202<br>\
-                    <a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
-                    lat: 39.288839,
-                    long: -76.607484
-		};
+	        google.maps.event.addListener(marker, 'click', function() {
+	          infowindow.setContent(place.name);
+	          infowindow.open(map, this);
+	        });
+	      }
+		
+		function getCuisine(language){
+			var cuisine;
+			
+			if(language == "English"){
+				cuisine = "American";
+			}else if(language == "Spanish"){
+				cuisine = "Mexican";
+			}else{
+				cuisine = language;
+			}
+			return cuisine;
+		}
 
-		var la = {
-				info: '<strong>La Tavola</strong><br>\r\
-                    248 Albemarle St<br> Baltimore, MD 21202<br>\
-                    <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
-                    lat: 39.286160,
-                    long: -76.602473
-		};
+	
 
-		var italianLocations = [
-		                        [sotta.info, sotta.lat, sotta.long, 0],
-		                        [aggio.info, aggio.lat, aggio.long, 1],
-		                        [la.info, la.lat, la.long, 2],
-		                        ];
 
 		var tio = {
 				info: '<strong>Tio Pepe</strong><br>\
@@ -119,19 +162,3 @@
 
     
 
-    var marker, i;
-
-    for (i = 0; i < spanishLocations.length; i++) {
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(spanishLocations[i][1], spanishLocations[i][2]),
-            map: map
-        });
-
-        google.maps.event.addListener(marker, 'click', (function (marker, i) {
-            return function () {
-                infowindow.setContent(spanishLocations[i][0]);
-                infowindow.open(map, marker);
-            }
-        })(marker, i));
-    }
-}
