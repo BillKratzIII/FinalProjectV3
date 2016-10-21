@@ -179,7 +179,10 @@ $(function() {
     		                    + "</div>"
     		                    + "</div>"
     		                    + "</div>"
-    		             
+    		                    
+    		                    + "<div class=\"col-md-9\" style=\"text-align: center\">"
+    		                    + "<input type=\"hidden\" id=\"email" + counter + "\" value=\"" + this.email + "\">"     
+    		                    + "</div>"
     		                    
     		                    + "<div class=\"col-md-9\" style=\"text-align: center\">"
     		                    + "<input type=\"hidden\" id=\"streetAddress" + counter + "\" value=\"" + this.streetAddress + "\">"     
