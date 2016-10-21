@@ -11,8 +11,8 @@ $(function() {
         rest_phone: '410-410-4100',
 		rest_lat: 39.294415,
 		rest_long: -76.615134,
-        img: 'restaurant6',
-        rest_bio: 'typesetting industry. asdkkskm cmsksi edms makak ksksks kdhd hshsh sjsjsj'
+        img: '22',
+        rest_bio: 'typesetting industry. asdkks ks kmcmsks iedmsm akak ksksks kdhdhshsh sjsjsj asdkks asdkks asdkks kds'
     },
 
     {
@@ -26,8 +26,8 @@ $(function() {
         rest_phone: '410-410-4100',
 		rest_lat: 39.288839,
 		rest_long: -76.607484,
-        img: 'restaurant10',
-        rest_bio: 'typesetting industry. asdkk skmcmsksie dmsma kak ksksks kdh dhshsh sjsjsj'
+        img: '10',
+        rest_bio: 'typesetting industry. asdkks ks kmcmsks iedmsm akak ksksks kdhdhshsh sjsjsj asdkks asdkks asdkks kds'
     },
 
     {
@@ -41,8 +41,8 @@ $(function() {
         rest_phone: '410-410-4100',
 		rest_lat: 39.286160,
 		rest_long: -76.602473,
-        img: 'restaurant17',
-        rest_bio: 'typesetting industry. asdkks kmcmsks iedmsm akak ksksks kdhdhshsh sjsjsj'
+        img: '17',
+        rest_bio: 'typesetting industry. asdkks ks kmcmsks iedmsm akak ksksks kdhdhshsh sjsjsj asdkks asdkks asdkks kds'
     }
  // {
  //        rest_name: 'Tio Pepe',
@@ -95,7 +95,7 @@ $(function() {
         $.each(restaurants, function(){
         $('.restMatches').append("<div class=\"col-sm-6 col-md-4\">"
                 + "<div class=\"thumbnail\">"
-                + "<img class=\"img-responsive img-rounded\" height=\"250px\" src=\"img/" + this.img + ".png\">"
+                + "<img id=\"restPic\" class=\"img-responsive img-rounded\" src=\"img/rest" + this.img + ".jpg\">"
                 + "<div class=\"caption\">"
                 + "<h3>" + this.rest_name + "</h3>"
                 + "<p>" + this.rest_bio + "</p>"
