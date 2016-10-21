@@ -53,6 +53,15 @@ public class Restaurant implements Serializable{
 	@Column(name="lng")
 	private String lng;
 	
+	@Column(name="phone")
+	private String phone;
+	
+	@Column(name="bio")
+	private String bio;
+	
+	@Column(name="image")
+	private String image;
+	
 	
 	/*getters and setters below- */
 
@@ -142,6 +151,30 @@ public class Restaurant implements Serializable{
 
 	public void setLng(String lng) {
 		this.lng = lng;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getBio() {
+		return bio;
+	}
+
+	public void setBio(String bio) {
+		this.bio = bio;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 	

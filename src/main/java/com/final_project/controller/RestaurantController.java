@@ -1,6 +1,9 @@
 package com.final_project.controller;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -15,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.final_project.entity.Restaurant;
+import com.final_project.entity.User;
+import com.final_project.entity.WholeUser;
 import com.final_project.service.RestaurantService;
 
 @Controller
@@ -56,5 +61,22 @@ public class RestaurantController {
 	public ResponseEntity<Void> Restaurant(@PathVariable("id") Integer restaurantId) {
 		restaurantService.deleteRestaurant(restaurantId);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
-	}	
+	}
+	
+	//returns users with same language profiles
+	@RequestMapping(value= "/restmatches", method = RequestMethod.GET)
+	public ResponseEntity<ArrayList<Restaurant>> getRestMatches(HttpSession sessionObj) {
+		List<Restaurant> restaurants = restaurantService.getAllRestaurants();
+		ArrayList<Restaurant> matches = new ArrayList<>();
+		WholeUser userLoggedIn = (WholeUser) sessionObj.getAttribute("user");
+				
+		for (Restaurant restaurant : restaurants) {
+					
+			if (restaurant.getLanguageId().equalsIgnoreCase(userLoggedIn.getLearningLanguageId())){
+				matches.add(restaurant);
+			}
+		}
+				
+			return new ResponseEntity<ArrayList<Restaurant>>(matches, HttpStatus.OK);
+	}
 }

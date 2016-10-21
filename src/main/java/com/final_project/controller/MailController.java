@@ -20,7 +20,7 @@ public class MailController {
 	
 	@RequestMapping(value="/send-mail", method = RequestMethod.POST)
 	public void sendMail(@RequestBody Email email) throws MessagingException{
-		System.out.println("Inside sendEmail()");
+		System.out.println("Inside sendEmail()" + email.getAddress());
 		smtpMailSender.send(email.getAddress(), email.getSubject(), email.getMessage());
 		
 	}

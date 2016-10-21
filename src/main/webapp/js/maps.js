@@ -2,6 +2,7 @@
 	
 	var map;
     var infowindow;
+    var restaurants;
 
 
 	function initMap() {
@@ -160,5 +161,95 @@
       [kitchen.info, kitchen.lat, kitchen.long, 2],
     ];
 
-    
 
+$(function(){
+	
+	$.get("/restmatches", function(data){
+		restaurants=data;
+		var counter = 0;	
+	$.each(restaurants, function() {
+		if(!(this.name == null)){
+		$('.restMatches').append(
+			"<div class=\"col-sm-6 col-md-4\">"
+			+ "<div class=\"thumbnail\">"
+
+			+ "<img id=\"restPic\" class=\"img-responsive img-rounded\" src=\"img/restaurant"
+			+ this.image
+			+ ".png\">"
+
+			+ "<div class=\"caption\">"
+			+ "<h3>"
+			+ this.name
+			+ "</h3>"
+			+ "<p>"
+			+ this.bio
+			+ "</p>"
+			+ "<address>"
+			+ this.streetAddress
+			+ "<br>"
+			+ this.city
+			+ ","
+			+ this.state
+			+ " "
+			+ this.zip
+			+ "<br><abbr title=\"Phone\">P:</abbr>"
+			+ this.phone
+			+ "</address>"
+			+ "</div>"
+			+ "</div>"
+			+ "</div>"
+
+		)
+		if(counter==0){
+		marker3 = new google.maps.Marker({
+		    	icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+		    	position: new google.maps.LatLng(this.lat, this.lng),
+		    	map: map,
+		    	title: this.name
+		});
+		
+		var contentString = this.name + ": " + this.city + ", " + this.state;
+		    
+		google.maps.event.addListener(marker3, 'click', function() {
+		          infowindow.setContent(contentString);
+		          infowindow.open(map, this);
+		});
+		}else if(counter==1){
+			marker4 = new google.maps.Marker({
+		    	icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+		    	position: new google.maps.LatLng(this.lat, this.lng),
+		    	map: map,
+		    	title: this.name
+		});
+		
+		var contentString = this.name + ": " + this.city + ", " + this.state;
+		    
+		google.maps.event.addListener(marker4, 'click', function() {
+		          infowindow.setContent(contentString);
+		          infowindow.open(map, this);
+		});	
+			
+		}else{
+			marker5 = new google.maps.Marker({
+		    	icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+		    	position: new google.maps.LatLng(this.lat, this.lng),
+		    	map: map,
+		    	title: this.name
+		});
+		
+		var contentString = this.name + ": " + this.city + ", " + this.state;
+		    
+		google.maps.event.addListener(marker5, 'click', function() {
+		          infowindow.setContent(contentString);
+		          infowindow.open(map, this);
+		})
+			
+		};
+
+		$('#restBackground').addClass(this.languageId);
+		counter++;
+		return counter<3;
+		}
+	});
+	},"json");
+});
